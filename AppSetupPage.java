@@ -49,33 +49,30 @@ public class AppSetupPage extends BaseTest {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Allow Intelehealth to access photos and media on your device?']")
 	public WebElement accessPhotosTextView;
 
-	// Language Selection Elements
-//accessibility id	Splash Screen Bottom Language Panel Save Selected Language Button
-	// xpath =
-	// "//android.widget.Button[@resource-id=\"org.intelehealth.app:id/btn_next_to_intro\"]"
-	@AndroidFindBy(accessibility = "Splash Screen Bottom Language Panel Save Selected Language Button")
+	@AndroidFindBy(id = "org.intelehealth.app:id/btn_next_to_intro")
 	private WebElement nextButton;
 
 	@AndroidFindBy(xpath = "//android.widget.RadioButton[@text='English']")
 	private WebElement english;
 	// Introductory Screen Elements
 
-	@AndroidFindBy(accessibility = "Intro Screen First Title TextView")
-	// @AndroidFindBy(xpath =
-	// "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tvIntroTitle']")
+	// @AndroidFindBy(accessibility = "Intro Screen First Title TextView")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Who are we?']")
 	private WebElement whoWeAre;
 
-	@AndroidFindBy(accessibility = "Intro Screen Second Title TextView")
-	// @AndroidFindBy(xpath =
-	// "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tvIntroTitle']")
+//	@AndroidFindBy(accessibility = "Intro Screen Second Title TextView")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Take patient visits']")
 	private WebElement takePatientVisits;
 
 	// this needs to be changed but same as above hence negotiating
-	@AndroidFindBy(accessibility = "Intro Screen Third Title TextView")
+
+//	@AndroidFindBy(accessibility = "Intro Screen Third Title TextView")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Provide prescriptions']")
+
 	private WebElement providePrescriptions;
 
-	@AndroidFindBy(accessibility = "Intro Screen Skip Screen Button")
-	// @AndroidFindBy(id = "org.intelehealth.app:id/btn_skip_intro")
+	// @AndroidFindBy(accessibility = "Intro Screen Skip Screen Button")
+	@AndroidFindBy(id = "org.intelehealth.app:id/btn_skip_intro")
 
 	private WebElement skipButton;
 
@@ -96,17 +93,32 @@ public class AppSetupPage extends BaseTest {
 	@AndroidFindBy(accessibility = "Setup Ayu Intro Screen Accept TnC And PP TextView 2")
 	private WebElement termsAndCondition;
 
+//	@AndroidFindBy(accessibility = "Setup Ayu Intro Screen Hello TextView")
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_hello_ayu")
+
+	private WebElement helloIamAyu;
+
+	// @AndroidFindBy(accessibility = "Setup Ayu Intro Screen Subtitle TextView")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text=\"A digital health assistant.\n" + "Let’s get started!\"]")
+
+	private WebElement ayuIntroScreenSubtitle;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_privacy_notice_link_1")
+	private WebElement lblTermsAndPolicy;
+
 	@AndroidFindBy(accessibility = "Setup Ayu Intro Screen Accept TnC And PP TextView 4")
 	private WebElement privacyPolicy;
 
 	// Terms and Conditions Screen Elements
-	@AndroidFindBy(accessibility = "Terms and Conditions Title TextView")
+	// @AndroidFindBy(accessibility = "Terms and Conditions Title TextView")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Terms & Conditions']")
 	private WebElement termsAndConditionTitle;
 
 	@AndroidFindBy(accessibility = "Terms and Conditions Content TextView")
 	private WebElement termsAndConditionDescription;
 
-	@AndroidFindBy(accessibility = "Terms and Conditions Back Arrow ImageView")
+//	@AndroidFindBy(accessibility = "Terms and Conditions Back Arrow ImageView")
+	@AndroidFindBy(id = "org.intelehealth.app:id/iv_back_arrow_terms")
 	private WebElement termsAndConditionsBackArrow;
 
 	@AndroidFindBy(accessibility = "Terms and Conditions Decline Button")
@@ -131,7 +143,7 @@ public class AppSetupPage extends BaseTest {
 	@AndroidFindBy(accessibility = "Privacy Policy Accept Button")
 	private WebElement privacyPolicyAcceptButton;
 
-	@AndroidFindBy(accessibility = "Setup Screen Username Edittext")
+	<<<<<<<HEAD @AndroidFindBy(accessibility="Setup Screen Username Edittext")
 	// Setup Screen Elements
 	private WebElement username;
 
@@ -150,7 +162,33 @@ public class AppSetupPage extends BaseTest {
 	@AndroidFindBy(accessibility = "Custom Toolbar Location Name TextView")
 	private WebElement locationName;
 
-	@AndroidFindBy(id = "org.intelehealth.app:id/ivInternetCustomToolbar")
+	// @AndroidFindBy(id = "org.intelehealth.app:id/ivInternetCustomToolbar")
+	// @AndroidFindBy(accessibility = "Setup Screen Username Edittext")
+	@AndroidFindBy(id = "org.intelehealth.app:id/et_username")
+	private WebElement username;
+
+	// @AndroidFindBy(accessibility = "Setup Screen Password Edittext")
+	@AndroidFindBy(id = "org.intelehealth.app:id/et_password")
+	private WebElement password;
+
+	// @AndroidFindBy(accessibility = "Show dropdown menu")
+	@AndroidFindBy(id = "org.intelehealth.app:id/autotv_select_location")
+	private WebElement dropdown;
+
+	// @AndroidFindBy(xpath = "//android.widget.RelativeLayout[@content-desc='Setup
+	// Screen Parent
+	// RelativeLayout']/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView[2]")
+	@AndroidFindBy(id = "//android.widget.TextView[@text='Telemedicine Clinic 1']")
+	private WebElement location;
+
+	// @AndroidFindBy(accessibility = "Setup Screen Setup Button")
+	@AndroidFindBy(id = "org.intelehealth.app:id/btn_setup")
+	private WebElement setupScreeenSetupButton;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_user_location_home")
+	private WebElement locationName;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/imageview_is_internet")
 	private WebElement refreshButton;
 
 	@AndroidFindBy(accessibility = "Intelehealth")
@@ -161,7 +199,8 @@ public class AppSetupPage extends BaseTest {
 	@AndroidFindBy(accessibility = "Navigate up")
 	private WebElement navigateBack;
 
-	@AndroidFindBy(accessibility = "Setup Screen Enter Details TextView")
+	// @AndroidFindBy(accessibility = "Setup Screen Enter Details TextView")
+	@AndroidFindBy(id = "org.intelehealth.app:id/enterDetailsTV")
 	private WebElement lblPleaseEnterDetails;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Location']")
@@ -170,7 +209,11 @@ public class AppSetupPage extends BaseTest {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Password']")
 	private WebElement lblPassword;
 
-	@AndroidFindBy(accessibility = "Setup Screen Setup Title TextView")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Username']")
+	private WebElement lblUsername;
+
+	// @AndroidFindBy(accessibility = "Setup Screen Setup Title TextView")
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_setup")
 	private WebElement lblSetUpHeader;
 
 	JSONObject appData;
@@ -207,8 +250,7 @@ public class AppSetupPage extends BaseTest {
 		for (int i = 0; i <= 3; i++) { // Adjust the loop count if needed
 			click(allowButton);
 		}
-//		click(btnAllowAll);
-
+		click(btnAllowAll);
 	}
 
 	// Click on Next button
@@ -267,14 +309,7 @@ public class AppSetupPage extends BaseTest {
 	public List<String> getIntroductoryScreenText() {
 		return getElementsText(whoWeAre, takePatientVisits, providePrescriptions);
 	}
-
-	// Verify Skip button is displayed
-	/**
-	 * public void skipButtonIsDisplayed() throws InterruptedException {
-	 * isDisplayed(skipButton, "Skip button is displayed"); }
-	 * 
-	 * @throws CustomElementNotFoundException
-	 */
+	
 	public boolean skipButtonIsDisplayed() throws InterruptedException {
 		if (isDisplayed2(skipButton, "Skip button is displayed")) {
 			return true;
@@ -293,6 +328,12 @@ public class AppSetupPage extends BaseTest {
 
 	public List<String> getPolicyTexts() {
 		return getElementsText(termsAndCondition, privacyPolicy);
+	}
+
+	
+
+	public String getTermsAndPolicyText() {
+		return lblTermsAndPolicy.getText();
 	}
 
 	public List<String> getAyuScreenText() {
@@ -335,6 +376,7 @@ public class AppSetupPage extends BaseTest {
 
 	public List<String> getSetUpScreenLabels() {
 		return getElementsText(lblSetUpHeader, lblPleaseEnterDetails, lblLocation, location, lblPassword);
+
 	}
 
 	// Perform login
@@ -343,16 +385,10 @@ public class AppSetupPage extends BaseTest {
 
 		click(dropdown);
 		// Click on the location element to select a location
-
 		click(location);
-		// Enter the username into the username field
-
 		sendKeys(username, un);
-		// Enter the password into the password field
-
 		sendKeys(password, pw);
-		// Click on the setup screen setup button to complete the login process
-		click(setupScreeenSetupButton);
+s		click(setupScreeenSetupButton);
 
 		// Handling display over other apps
 		try {
@@ -424,7 +460,5 @@ public class AppSetupPage extends BaseTest {
 		String decryptedPassword = decrypt(encryptedPassword);
 		System.out.println("Decrypted Password: " + decryptedPassword);
 		login(decryptedUserName, decryptedPassword);
-
 	}
-
 }

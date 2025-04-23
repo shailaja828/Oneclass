@@ -122,10 +122,10 @@ public class StartVisit3And4StepsPage extends BaseTest {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='1 of 6 questions']")
 	private WebElement oneOfSixQuestions;
 
-	@AndroidFindBy(accessibility = "Reference ImageView")
+	@AndroidFindBy(accessibility = "//androidx.recyclerview.widget.RecyclerView[@resource-id='org.intelehealth.app:id/rcv_questions']/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.ImageView")
 	private WebElement oneOfSixQuestionsImage;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='No']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='No']")
 	private WebElement oneOfSixQuestionsNoOption;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Yes']")
@@ -133,7 +133,7 @@ public class StartVisit3And4StepsPage extends BaseTest {
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Take a picture']")
 	private WebElement oneOfSixQuestionsTakePictureOption;
-	@AndroidFindBy(accessibility = "Visit Image Capture View Capture Button")
+	@AndroidFindBy(id = "org.intelehealth.app:id/btn_1st_capture")
 	private WebElement imageCaptureButton;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Upload an image from gallery or take a picture']")
 	private WebElement captureImageText;
@@ -142,10 +142,9 @@ public class StartVisit3And4StepsPage extends BaseTest {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Choose from Gallery']")
 	private WebElement chooseFromGallery;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Cancel']")
-
 	private WebElement cancel;
+	
 	@AndroidFindBy(xpath = "//android.widget.ImageView[@resource-id='org.intelehealth.app:id/camera_switch_iv']")
-
 	private WebElement camera;
 	@AndroidFindBy(xpath = "//android.widget.ImageView[@resource-id='org.intelehealth.app:id/utils_take_picture']")
 
@@ -503,6 +502,8 @@ public class StartVisit3And4StepsPage extends BaseTest {
 		isDisplayed(oneOfSixQuestionsYesOption, "Yes option for One of Six Questions is displayed");
 		isDisplayed(oneOfSixQuestionsNoOption, "No option for One of Six Questions is displayed");
 		setImplicitWait();
+		
+	
 		isDisplayed(oneOfSixQuestionsTakePictureOption, "Take Picture option for One of Six Questions is displayed");
 
 	}

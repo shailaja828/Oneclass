@@ -1,6 +1,10 @@
 package com.intelehealth.pages;
 
 import java.io.IOException;
+<<<<<<< HEAD
+=======
+import java.util.List;
+>>>>>>> 4179dc4eaab4c397c63ead2179c1294ae6a508ec
 
 import org.openqa.selenium.WebElement;
 
@@ -37,7 +41,28 @@ public class FindPatientPage extends BaseTest {
 	@AndroidFindBy(accessibility = "No Patient Found Placeholder 'Add New Patient' Text TextView-Add new patient")
 	private WebElement addNewPatientCTAButton;
 
-	@AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"Find Patient List Item Name TextView\"])[1]")
+	@AndroidFindBy(id = "org.intelehealth.app:id/textlayout_find_patient")
+	private WebElement findPatients;
+	
+	@AndroidFindBy(id = "org.intelehealth.app:id/search_txt_enter")
+	private WebElement findPatientSearchBar;
+	
+	@AndroidFindBy(id = "org.intelehealth.app:id/icon_search")
+	private WebElement findPatientSearchIcon;
+
+	@AndroidFindBy(xpath = "(//android.widget.TextView[@resource-id='org.intelehealth.app:id/search_name'])[1]")
+	private WebElement automationOnePatient;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/search_pat_not_found_txt")
+	private WebElement patientNotFound;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/search_pat_hint_txt")
+	private WebElement noPatientFoundSubTitle;
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Add New Patient']")
+	private WebElement addNewPatientCTAButton;
+
+	@AndroidFindBy(xpath = "(//android.widget.FrameLayout[@resource-id='org.intelehealth.app:id/fu_cardview_item'])[1]/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[1]")
 	private WebElement lblPatientCard;
 	
 //	@AndroidFindBy(accessibility = "No Patient Found Placeholder Icon ImageView")
@@ -70,12 +95,6 @@ public class FindPatientPage extends BaseTest {
 		executeCommand("adb shell input keyevent 84");
 		((PressesKey) getDriver()).pressKey(new
 				KeyEvent(AndroidKey.ENTER));
-//	//((PressesKey) getDriver()).pressKey(new KeyEvent(AndroidKey.TAB));
-//	((PressesKey) getDriver()).pressKey(new KeyEvent(AndroidKey.ENTER));
-
-		// ((PressesKey) getDriver()).pressKey(new
-		// KeyEvent().withKey(AndroidKey.SEARCH));
-		// pressEnter(findPatientSearchBar);
 	}
 
 	public static void executeCommand(String command) {
@@ -86,25 +105,36 @@ public class FindPatientPage extends BaseTest {
 			e.printStackTrace();
 		}
 	}
-
-// Method to verify the presence of the searched patient
-	public void verifySearchedPatient() {
-		isDisplayed(automationOnePatient, "Patient is Displayed");
+	public String verifySearchedPatient() {
+			return automationOnePatient.getText();
 	}
-
-// Method to enter an invalid patient name in the search box and press Enter
+	
+	public boolean isDisplayedSearchedPatient() {
+		return isDisplayed(automationOnePatient, "Patient is Displayed");
+			
+	}
+	
 	public void enterInvalidPatienTName(String txt) throws InterruptedException {
 		sendKeys(findPatientSearchBar, txt);
 
 	}
 
-//Method to verify the elements when an invalid patient is searched
 	public void verifyInvalidPatientSearch() {
 		isDisplayed(patientNotFound, "Patient not founf msg is displayed");
 		isDisplayed(noPatientFoundSubTitle, "");
 		isDisplayed(addNewPatientCTAButton, "");
 	}
 
+	public boolean verifyInvalidPatientSearch() {
+		return isDisplayed(patientNotFound, "Patient not founf msg is displayed")
+	&&	isDisplayed(noPatientFoundSubTitle, "")
+		&& isDisplayed(addNewPatientCTAButton, "");	
+	}
+
+	public List<String> getInvalidPatientSearch() {
+		return getElementsText(patientNotFound, noPatientFoundSubTitle, addNewPatientCTAButton);
+	}
+	
 // Method to verify if the search box is visible
 	public boolean verifySearchBoxIsVisible() throws InterruptedException {
 	return	isDisplayed(findPatientSearchBar);

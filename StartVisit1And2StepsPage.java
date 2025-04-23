@@ -28,65 +28,78 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	private WebElement patientName;
 	@AndroidFindBy(accessibility = "Patient Details Patient OpenMRS ID TextView")
 	private WebElement patientId;
-	@AndroidFindBy(accessibility = "Visit Creation Title TextView")
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_title")
 	private WebElement visitCreatedPatientName;
 
-	@AndroidFindBy(accessibility = "Visit Creation Title Description TextView")
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_title_desc")
 	private WebElement visitCreatedPatientAge;
 
-	@AndroidFindBy(accessibility = "Visit Creation Refresh ImageButton")
+	@AndroidFindBy(id = "org.intelehealth.app:id/imb_btn_refresh")
 	private WebElement visitCreationRefreshImageButton;
 
-	@AndroidFindBy(accessibility = "Visit Creation Subtitle TextView")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_sub_title' and @text='1/4 Vitals']")
 	private WebElement visitCreationSubtitle;
 
-	@AndroidFindBy(accessibility = "Visit Creation Step 1 ProgressBar")
+	@AndroidFindBy(id = "org.intelehealth.app:id/prog_bar_step1")
 	private WebElement visitCreationStep1ProgressBar;
 
-	@AndroidFindBy(accessibility = "editext for height input in Vital Collection Fragment")
+	@AndroidFindBy(id = "org.intelehealth.app:id/etv_height")
 	private WebElement heightEditText;
 
-	@AndroidFindBy(accessibility = "edittext for weight in Vital Collection Fragment")
+	@AndroidFindBy(id = "org.intelehealth.app:id/etv_weight")
 	private WebElement weightEditText;
 
-	@AndroidFindBy(accessibility = "bp systolic edittext input in Vital Collection Fragment")
+	@AndroidFindBy(id = "org.intelehealth.app:id/etv_bp_sys")
 	private WebElement bpSystolicEditText;
 
-	@AndroidFindBy(accessibility = "bp diastolic edittext input in Vital Collection Fragment")
+	@AndroidFindBy(id = "org.intelehealth.app:id/etv_bp_dia")
 	private WebElement bpDiastolicEditText;
 
-	@AndroidFindBy(accessibility = "pulse input edittext in Vital Collection Fragment")
+	@AndroidFindBy(id = "org.intelehealth.app:id/etv_pulse")
 	private WebElement pulseEditText;
 
-	@AndroidFindBy(accessibility = "temperature input edittext in Vital Collection Fragment")
+	@AndroidFindBy(id = "org.intelehealth.app:id/etv_temperature")
 	private WebElement temperatureEditText;
 
-	@AndroidFindBy(accessibility = "spo2 input edittext in Vital Collection Fragment")
+	@AndroidFindBy(id = "org.intelehealth.app:id/etv_spo2")
 	private WebElement spo2EditText;
 
-	@AndroidFindBy(accessibility = "Respiratory Rate input edittext in Vital Collection Fragment")
+	@AndroidFindBy(id = "org.intelehealth.app:id/etv_respiratory_rate")
 	private WebElement respiratoryRateEditText;
-	@AndroidFindBy(accessibility = "next button in Vital Collection Fragment")
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_blood_group_spinner")
+	private WebElement drpBloodGroup;
+
+	@AndroidFindBy(id = "(//android.widget.RelativeLayout[@resource-id='android:id/text1'])[4]")
+	private WebElement selectDrpBloodGroup;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/btn_submit")
 	private WebElement nextButton;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Enter the patient’s vitals']")
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_sub_title_vital_info")
 	private WebElement enterthePatientsVitalsLabel;
-	@AndroidFindBy(id = "org.intelehealth.app:id/tv_sub_title")
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_sub_title' and @text='Enter patient’s body measurement details']")
 	private WebElement enterPatientsBodyMeasurementDetailsLabel;
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='BMI index(auto-calculated)']")
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_bmi_lbl")
 	private WebElement bMIIndex;
 
-	@AndroidFindBy(accessibility = "bmi value textview in Vital Collection Fragment")
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_bmi_value")
 	private WebElement bMIvalue;
-	@AndroidFindBy(accessibility = "bmi status textview in Vital Collection Fragment")
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_bmi_status")
 	private WebElement bMIStatus;
+
 	@AndroidFindBy(accessibility = "bmi status textview in Vital Collection Fragment")
 	private WebElement normalWeight;
-	@AndroidFindBy(accessibility = "Vitals Summary Vitals Subtitle TextView")
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_sub_title' and @text='Enter patient’s body measurement details']")
 	private WebElement vitalSummaryTitle;
 
 // 1/4 vital summary screen elements
-	@AndroidFindBy(accessibility = "Vitals Summary Vitals Icon ImageView")
+	@AndroidFindBy(id = "org.intelehealth.app:id/iv_vital_image")
 	private WebElement thermoMeter;
 
 	@AndroidFindBy(accessibility = "Vitals Summary Details Label TextView")
@@ -111,7 +124,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	private WebElement bmiTitle;
 
 	@AndroidFindBy(accessibility = "Vitals Summary BMI Value TextView")
-	private WebElement bmiValue;
+	private WebElement bmiValueInVitalsSummary;
 
 	@AndroidFindBy(accessibility = "Vitals Summary BP Title TextView")
 	private WebElement bpTitle;
@@ -149,7 +162,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	@AndroidFindBy(accessibility = "Vitals Summary Submit Button")
 	private WebElement confirmButton;
 // 2/4 visit reason
-	@AndroidFindBy(accessibility = "Visit Creation Subtitle TextView")
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_sub_title")
 	private WebElement visitReasonTitle;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='What is the reason for this visit?']")
@@ -158,10 +171,10 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	@AndroidFindBy(accessibility = "AutoComplete TextView for search feature in Visit Reason Capture Fragment")
 	private WebElement searchReasonTextBox;
 
-	@AndroidFindBy(accessibility = "next button for visit reason capture fragment")
+	@AndroidFindBy(id = "org.intelehealth.app:id/btn_submit")
 	private WebElement visitReasonNextButton;
 
-	@AndroidFindBy(accessibility = "back button to previous screen visit reason capture fragment")
+	@AndroidFindBy(id = "org.intelehealth.app:id/btn_cancel")
 	private WebElement visitReasononBackButton;
 
 	@AndroidFindBy(accessibility = "selected reasons textview in Visit Reason Capture Fragment")
@@ -182,93 +195,98 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	@AndroidFindBy(xpath = "//android.widget.ProgressBar[@text='20.0']")
 	private WebElement progressBar2;
 
-	@AndroidFindBy(accessibility = "Selected Chip Item View Name TextView")
+	@AndroidFindBy(xpath = "(//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name'])[1]")
 	private WebElement selectedReason;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Abdominal Pain']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Abdominal Pain']")
 	private WebElement visitReasonAbdominalPain;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Chips for Reason Item TextView']")
+	@AndroidFindBy(xpath = "(//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name'])[1]")
 	private WebElement chipReason;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Diarrhea']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Diarrhea']")
 	private WebElement diarrhea;
 
-	@AndroidFindBy(xpath = " //android.widget.TextView[@text='Fever']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Fever']")
 	private WebElement fever;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Chips for Reason Item TextView' and @text='Hypertension screening']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Hypertension screening']")
 	private WebElement hypertension;
 
-	@AndroidFindBy(accessibility = "Selected Chip Item View Remove ImageView")
+	@AndroidFindBy(id = "org.intelehealth.app:id/im_remove")
 	private WebElement remove;
 
-	@AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc='Selected Chip Item View Name TextView'])")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_all_reason_lbl']/preceding-sibling::android.widget.RelativeLayout//android.widget.TextView")
 	private List<WebElement> allSelectedReasons;
 // confirm visit popup
 
-	@AndroidFindBy(accessibility = "Common Message Dialog With Chips Title TextView")
+	@AndroidFindBy(id = "org.intelehealth.app:id/dialog_title")
 	private WebElement confirmVisitPopupTitle;
 
-	@AndroidFindBy(accessibility = "Common Message Dialog With Chips Subtitle TextView")
+	@AndroidFindBy(id = "org.intelehealth.app:id/dialog_subtitle")
 	private WebElement confirmVisitPopupSubTitle;
 
-	@AndroidFindBy(accessibility = "Selected Chip Preview Item View Name TextView")
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_name")
 	private WebElement reason;
 
-	@AndroidFindBy(accessibility = "Common Message Dialog With Chips Negative Button")
+	@AndroidFindBy(id = "org.intelehealth.app:id/negative_btn")
 	private WebElement noButton;
 
-	@AndroidFindBy(accessibility = "Common Message Dialog With Chips Positive Button")
+	@AndroidFindBy(id = "org.intelehealth.app:id/positive_btn")
 	private WebElement yesButton;
 
 // 2/4 Visit reason : Abdominal Pain
-	@AndroidFindBy(accessibility = "Visit Creation Subtitle TextView")
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_sub_title")
 	private WebElement visitCreationTitle;
 
-	@AndroidFindBy(accessibility = "Question Node Question Count TextView")
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_question_counter")
 	private WebElement OneofElevenQuestion;
 
-	@AndroidFindBy(accessibility = "Question Node Question Count TextView")
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_question")
 	private WebElement addominalPainReasonQuestion1;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Chips for Reason Item TextView' and @text='Upper (R) - Right Hypochondrium']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Upper (R) - Right Hypochondrium']")
 	private WebElement upperRightHypochondrium;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Chips for Reason Item TextView' and @text='Upper (C) - Epigastric']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Upper (C) - Epigastric']")
 	private WebElement upperEpigastric;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Chips for Reason Item TextView' and @text='Upper (L) - Left Hypochondrium']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Upper (L) - Left Hypochondrium']")
 	private WebElement upperLeftHypochondrium;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Chips for Reason Item TextView' and @text='Middle (R) - Right Lumbar']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Middle (R) - Right Lumbar']")
 	private WebElement middleRightLumbar;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Chips for Reason Item TextView' and @text='Middle (C) - Umbilical']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Middle (C) - Umbilical']")
 	private WebElement middleUmbilical;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Chips for Reason Item TextView' and @text='Middle (L) - Left Lumbar']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Middle (L) - Left Lumbar']")
 	private WebElement middleLeftLumbar;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Chips for Reason Item TextView' and @text='Lower (R) - Right Illiac Fossa']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Lower (R) - Right Illiac Fossa']")
 	private WebElement lowerRightIliacFossa;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Chips for Reason Item TextView' and @text='Lower (C) - Hypogastric/Suprapubic']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Lower (C) - Hypogastric/Suprapubic']")
 	private WebElement lowerHypogastric;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Chips for Reason Item TextView' and @text='Lower (R) - Left Illiac Fossa']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Lower (R) - Left Illiac Fossa']")
 	private WebElement lowerLeftIliacFossa;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Chips for Reason Item TextView' and @text='All over']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='All over']")
 	private WebElement allOver;
-	@AndroidFindBy(accessibility = "Question Node Submit Button")
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/btn_submit")
 	private WebElement submitButton;
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='2 of 12 questions']")
+
+	@AndroidFindBy(xpath = "org.intelehealth.app:id/tv_question_counter")
 	private WebElement twoOfElevenQuestion;
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='3 of 12 questions']")
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_question_counter' and @text='3 of 12 questions']")
 	private WebElement threeofTwelveQuestion;
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Pain radiates to *']")
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Pain radiates to *']")
 	private WebElement painRadiates;
+
 	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"Nested Question Item View Question TextView\"]")
 	private WebElement painRadiatesTo;
 	// android.widget.TextView[@text='Pain radiates to']
@@ -306,43 +324,47 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	private WebElement painRadiatesSkipButton;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='3 of 12 questions']")
 	private WebElement threeOfElevenQuestions;
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='2']")
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='android:id/text1' and @text='2']")
 	private WebElement two;
 
-	@AndroidFindBy(accessibility = "Visit Reason Time Range Number Picker AppCompatSpinner")
+	@AndroidFindBy(id = "org.intelehealth.app:id/sp_number_range")
 	private WebElement numberSpinner;
-	
-	@AndroidFindBy(accessibility = "Visit Reason Time Range Duration Type AppCompatSpinner")
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='android:id/text1' and @text='Duration Type']")
 	private WebElement durationSpinner;
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Days']")
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='android:id/text1' and @text='Days']")
 	private WebElement days;
-	
-	@AndroidFindBy(accessibility = "Visit Reason Time Range Submit Button")
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/btn_submit")
 	private WebElement threeOfElevenQuestionSubmitButton;
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='4 of 12 questions']")
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_question_counter' and @text='4 of 12 questions']")
 	private WebElement fourOfElevenQuestion;
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Gradual']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Gradual']")
 	private WebElement gradualOption;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='5 of 12 questions']")
 	private WebElement fiveOfTwelveQuestions;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Other [describe]']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Other [describe]']")
 	private WebElement othersOptionOfFourOfTwelveQuestions;
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@text='Describe...']")
+	@AndroidFindBy(id = "org.intelehealth.app:id/actv_reasons")
 	private WebElement describeTextField;
 	@AndroidFindBy(accessibility = "Visit Reason Input Text Enter Value EditText")
 	private WebElement describeField;
-	@AndroidFindBy(accessibility = "Visit Reason Input Text Submit Button")
+	@AndroidFindBy(accessibility = "(//android.widget.Button[@text='Submit'])[last()]")
 	private WebElement submitButtonOfFourOfTwelveQuestion;
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Night']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Night']")
 	private WebElement night;
+
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='6 of 12 questions']")
 	private WebElement sixOfTwelveQuestions;
+
 	@AndroidFindBy(xpath = "(//android.widget.TextView[@text='Other [describe]'])[last()]")
 	private WebElement othersOptionOfFiveOfTwelveQuestions;
+
 	@AndroidFindBy(xpath = "(//android.widget.Button[@text='Submit'])[last()]")
 	private WebElement fiveOfTwelveQuestionsSubmitButton;
 // 6 of 12 questions
@@ -350,15 +372,20 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	private WebElement constantOptionOfSixOfTwelveQuetions;
 	@AndroidFindBy(xpath = "(//android.widget.Button[@text='Submit'])[last()]")
 	private WebElement sixOfTwelveQuestionsSubmitButton;
-	@AndroidFindBy(id = "org.intelehealth.app:id/tvQuestionDescQuestionNode")
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_question_desc")
 	private WebElement selectOneOrMoreText;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='7 of 12 questions']")
 	private WebElement sevenOfTwelveQuestions;
+
+	@AndroidFindBy(xpath = "(//android.widget.TextView[@text='Other [describe]'])")
+	private WebElement othersOptionOfSixOfTwelveQuestions;
+
 	@AndroidFindBy(xpath = "(//android.widget.TextView[@text='Other [describe]'])")
 	private WebElement othersOptionOfSixOfTwelveQuestions;
 // 7 of 12 questions
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Mild, 1-3']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Mild, 1-3']")
 	private WebElement mildOneThreeOption;
 
 // 8 of 12 questions
@@ -389,22 +416,31 @@ public class StartVisit1And2StepsPage extends BaseTest {
 // 10 of 12
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Has not started menstruation']")
 	private WebElement hasNotStartedmenstruationOption;
+
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='10 of 12 questions']")
 	private WebElement tenOfTwelveQusetions;
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Is menstruating']")
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Is menstruating']")
 	private WebElement isMenstruatingOption;
+
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Age at onset ']")
 	private WebElement ageAtOnset;
-	@AndroidFindBy(accessibility = "Visit Reason Input Text Enter Value EditText")
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/actv_reasons")
 	private WebElement ageAtOnSetInputFiled;
-	@AndroidFindBy(accessibility = "Visit Reason Input Text Submit Button")
+
+	@AndroidFindBy(xpath = "(//android.widget.Button[@text='Submit'])[last()]")
 	private WebElement ageOnSetInputFeildSubmitButton;
+
 	@AndroidFindBy(accessibility = "Visit Reason Input Text Skip Button")
 	private WebElement ageOnSetSkipButton;
+
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Last menstruation period']")
 	private WebElement lastMenstruationPeriod;
-	@AndroidFindBy(xpath = "//android.widget.CalendarView[@content-desc='Visit Reason Date Picker CalendarView']")
+
+	@AndroidFindBy(id = "android:id/month_view")
 	private WebElement calender;
+
 	@AndroidFindBy(xpath = "//android.view.View[@text='1']")
 	private WebElement menstruationDate;
 	@AndroidFindBy(accessibility = "Visit Reason Date Picker Selected Date TextView")
@@ -421,17 +457,20 @@ public class StartVisit1And2StepsPage extends BaseTest {
 //12 of 12 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='12 of 12 questions']")
 	private WebElement twelveOfTweleveQuestions;
-	@AndroidFindBy(accessibility = "Visit Reason Input Text Skip Button")
+	@AndroidFindBy(id = "org.intelehealth.app:id/btn_skip")
 	private WebElement twelveOfTwelveSkipButton;
 	@AndroidFindBy(xpath = "//android.widget.Button[@content-desc='Visit Reason Input Text Submit Button']")
 	private WebElement twelveOfTwelveSubmitButton;
-//Associated symptoms
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='2/4 Visit reason : Associated symptoms']")
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_sub_title")
 	private WebElement associatedSymptomsTitle;
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Do you have the following symptom(s)?']")
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Do you have the following symptom(s)?*']")
 	private WebElement doYouHaveFollowingSymptom;
-	@AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc='Associated Symptom List Item 'Yes' TextView'])[6]")
+
+	@AndroidFindBy(xpath = "(//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_yes'])[6]")
 	private WebElement changeInApetiteYesButton;
+
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='1 of 1 questions']")
 	private WebElement oneOfOneQuestions;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='What is the change?']")
@@ -440,17 +479,18 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	private WebElement increased;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Decreased']")
 	private WebElement decreased;
-	@AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"Associated Symptom List Item 'Yes' TextView\"])[7]")
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_question' and @text='7. Change in frequency of urination [describe]']/following-sibling::android.widget.LinearLayout//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_yes']")
 	private WebElement sevenYesButton;
-	@AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"Associated Symptom List Item 'Yes' TextView\"])[8]")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_question' and @text='8. Color change in stool [describe]']/following-sibling::android.widget.LinearLayout//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_yes']")
 	private WebElement eightYesButton;
-	@AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"Associated Symptom List Item 'Yes' TextView\"])[4]")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_question' and @text='9. Color change in urine [describe]']/following-sibling::android.widget.LinearLayout//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_yes']")
 	private WebElement nineYesButton;
-	@AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"Associated Symptom List Item 'Yes' TextView\"])[16]")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_question' and @text='16. Other [describe]']/following-sibling::android.widget.LinearLayout//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_yes']")
 	private WebElement sixteenYesButton;
-	@AndroidFindBy(accessibility = "Visit Reason Input Text Enter Value EditText")
+	@AndroidFindBy(id = "org.intelehealth.app:id/actv_reasons")
 	private WebElement describeTextArea;
-	@AndroidFindBy(accessibility = "Associated Symptoms Questionnaire Main View Submit Button")
+	@AndroidFindBy(id = "org.intelehealth.app:id/btn_submit")
 	private WebElement associatedSymptomSubmitButton;
 	@AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"Associated Symptom List Item 'Yes' TextView\"])[1]")
 	private WebElement firstYesButton;
@@ -575,12 +615,17 @@ public class StartVisit1And2StepsPage extends BaseTest {
 
 	@AndroidFindBy(id = "org.intelehealth.app:id/tv_spo2_lbl")
 	private WebElement lblSpO2;
+
 	@AndroidFindBy(id = "org.intelehealth.app:id/tv_respiratory_rate_lbl")
 	private WebElement lblRespiratoryRate;
 
+	@AndroidFindBy(id = "org.intelehealth.app:id/tv_blood_group_lbl")
+	private WebElement lblBloodGroup;
+
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Change']")
 	private WebElement btnChangeInVitalsSummaryScreen;
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Chips for Reason Item TextView' and @text='Does not move']")
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Does not move']")
 	private WebElement DoesNotMoveOption;
 
 	public void clickOnDoesNotMoveOption() {// 1/4
@@ -670,18 +715,25 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		scrollToViewRespiratoryRate();
 
 		return isDisplayedLabels && isDisplayed(spo2EditText, "SpO2 EditText is displayed")
-				&& isDisplayed(respiratoryRateEditText, " Respiratory Rate EditText is displayed");
+				&& isDisplayed(respiratoryRateEditText, " Respiratory Rate EditText is displayed")
+				&& isDisplayed(drpBloodGroup, "BloodGroup EditText is displayed");
+
 	}
 
 	public List<String> getUIElementsOfVitalsScreen() {
-		getDriver().findElement(
-				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollBackward()"));
+		/*
+		 * getDriver().findElement( AppiumBy.
+		 * androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollBackward()"
+		 * ));
+		 */
 
 		List<String> elementsText = getElementsText(enterPatientsBodyMeasurementDetailsLabel,
 				enterthePatientsVitalsLabel, lblHeight, lblWeight, lblBMIIndex, lblBPSystolic, lblBPDiastolic, lblPulse,
 				lblTemperature, lblSpO2);
 		scrollDown();
-		elementsText.addAll(getElementsText(lblRespiratoryRate));
+
+		// scrollDown("Respiratory Rate (breaths/min)");
+		elementsText.addAll(getElementsText(lblRespiratoryRate, lblBloodGroup));
 		return elementsText;
 	}
 
@@ -761,7 +813,8 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		double calculatedBMI = calculateBMI(weightKg, heightCm);
 		Thread.sleep(1000);
 		if (calculatedBMI < 18.5) {
-			return actualBMIStatus.equalsIgnoreCase(ExpectedStatus.getFirst());
+
+			return actualBMIStatus.equalsIgnoreCase(ExpectedStatus.get(0));
 		} else if (calculatedBMI > 18.5 && calculatedBMI < 24.9) {
 			return actualBMIStatus.equalsIgnoreCase(ExpectedStatus.get(1));
 
@@ -775,8 +828,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 			return actualBMIStatus.equalsIgnoreCase(ExpectedStatus.get(4));
 
 		} else if (calculatedBMI > 40.0) {
-			return actualBMIStatus.equalsIgnoreCase(ExpectedStatus.getLast());
-
+			return actualBMIStatus.equalsIgnoreCase(ExpectedStatus.get(5));
 		}
 
 		return false;
@@ -874,7 +926,8 @@ public class StartVisit1And2StepsPage extends BaseTest {
 				&& isDisplayed(heightValue, "Height Value is Displayed")
 				&& isDisplayed(weightTitle, "Weight Title is Displayed")
 				&& isDisplayed(weightValue, "Weight Value is Displayed")
-				&& isDisplayed(bmiTitle, "BMI Title is Displayed") && isDisplayed(bmiValue, "BMI Value is Displayed")
+				&& isDisplayed(bmiTitle, "BMI Title is Displayed")
+				&& isDisplayed(bmiValueInVitalsSummary, "BMI Value is Displayed")
 				&& isDisplayed(pulseTitle, "Pulse Title is Displayed")
 				&& isDisplayed(pulseValue, "Pulse Value is Displayed") && isDisplayed(bpTitle, "BP Title is Displayed")
 				&& isDisplayed(bpValue, "BP Value is Displayed") && isDisplayed(pulseTitle, "Pulse Title is Displayed")
@@ -1076,14 +1129,16 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		sendKeys(temperatureEditText, temperature);
 
 		// Scroll to view the respiratory rate field
-		scrollToViewRespiratoryRate();
-
+		scrollDown();
 		// Enter the provided spo2 (oxygen saturation) level
 		sendKeys(spo2EditText, spo2);
 
 		// Enter the provided respiratory rate
 		sendKeys(respiratoryRateEditText, respiratoryRate);
 
+		click(drpBloodGroup, "clicked on bloodGroup dropdown");
+
+		click(selectDrpBloodGroup, "clicked on bloodGroup dropdown");
 	}
 
 	public List<String> verifyPatientVitalsDetails() throws InterruptedException {
@@ -1282,8 +1337,9 @@ public class StartVisit1And2StepsPage extends BaseTest {
 
 	public boolean verifySelectedReasonIsRemoved() {
 		try {
+			Thread.sleep(2000);
 			return selectedReason.isDisplayed();
-		} catch (NoSuchElementException e) {
+		} catch (Exception e) {
 			return false;
 		}
 	}
@@ -1343,8 +1399,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		click(visitReasonAbdominalPain);
 		scrollToDiarreha();
 		click(diarrhea);
-	//	scrollToFever();
-		//click(fever);
 		scrollToHyperTension();
 		click(hypertension);
 		scrollToWhatIsTheReasonForVisit();
@@ -1518,9 +1572,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-	
 		}
-
 		two.isDisplayed();
 	}
 
@@ -1556,7 +1608,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-	
 		}
 
 		click(gradualOption);
@@ -1566,7 +1617,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-	
 		}
 
 		return isDisplayed(fiveOfTwelveQuestions);
@@ -1576,14 +1626,13 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-	
 		}
 
 		click(othersOptionOfFourOfTwelveQuestions);
 	}
 
 	public boolean verifyDescribeBlockIsDisplayedWithSubmitButton() throws InterruptedException {
-		return isDisplayed(describeTextField) && isDisplayed(sixOfTwelveQuestionsSubmitButton);
+		return isDisplayed(describeTextField) && isDisplayed(submitButtonOfFourOfTwelveQuestion);
 	}
 
 	public boolean isdisplayedSelectOneOrMoreText() {
@@ -1617,7 +1666,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-	
 		}
 
 		click(night);
@@ -1628,9 +1676,12 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	}
 
 	public boolean verifySixOfTwelveQuestionsIsDisplayed() throws InterruptedException {
-		click(othersOptionOfFiveOfTwelveQuestions);
-		sendKeys(describeTextField, "sri_test");
-		return isDisplayed(sixOfTwelveQuestions);
+		try {
+
+			return isDisplayed(sixOfTwelveQuestions);
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	public void selectOtherOptionOfFiveOfTwelveQuestions() {
@@ -1661,7 +1712,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-	
 		}
 
 		click(mildOneThreeOption);
@@ -1680,7 +1730,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-	
 		}
 
 		click(coughingOption);
@@ -1694,7 +1743,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-	
 		}
 
 		return isDisplayed(nineOfTwelveQuestions);
@@ -1704,7 +1752,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-	
 		}
 
 		click(otherOptionOfEightOfTwelveQuestions);
@@ -1718,7 +1765,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	}
 
 	public void selectLeaningForward() throws InterruptedException {
-		Thread.sleep(3000);;
+		Thread.sleep(3000);
 		click(leaningForwardOption);
 	}
 
@@ -1737,7 +1784,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-	
 		}
 
 		click(hasNotStartedmenstruationOption);
@@ -1753,7 +1799,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-	
 		}
 
 		isDisplayed(ageAtOnset);
@@ -1764,7 +1809,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-	
 		}
 
 		sendKeys(ageAtOnSetInputFiled, txt);
@@ -1820,9 +1864,11 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	public void selectYesDescribeOption() {
 		click(yesDescribeOption);
 	}
-public void scrolltoSubmit() {
-	scrollDown();
-}
+
+	public void scrolltoSubmit() {
+		scrollDown();
+	}
+
 // Click on the 'None' option element to select it
 	public void selectNoneOption() {
 		click(noneOption);
@@ -1929,7 +1975,7 @@ public void scrolltoSubmit() {
 	// Clicks on the "Yes" button for the associated symptom eight.
 
 	public void clickOnEightAssociatedSymptomYesButton() {
-		click(sevenYesButton);
+		click(eightYesButton);
 	}
 
 	// Clicks on the "Yes" button for the associated symptom nine.
@@ -1939,7 +1985,7 @@ public void scrolltoSubmit() {
 
 	// Clicks on the "Yes" button for the associated symptom sixteen.
 	public void clickOnSixteenAssociatedSymptomYesButton() {
-		click(sevenYesButton);
+		click(sixteenYesButton);
 	}
 
 	// Verifies that the text area for describing symptoms is displayed.
@@ -1964,7 +2010,7 @@ public void scrolltoSubmit() {
 
 	}
 
-	public void enterDataInDescribeTextFiled(String txt) throws InterruptedException {
+	public void enterDataInDescribeTextField(String txt) throws InterruptedException {
 		sendKeys(describeTextArea, txt);
 	}
 
@@ -1976,7 +2022,6 @@ public void scrolltoSubmit() {
 	}
 
 	public void clickOnAssociatedSymptomMainSubmitButton() throws InterruptedException {
-	//	scrollToEndAction();
 		click(associatedSymptomSubmitButton);
 	}
 
@@ -1998,11 +2043,7 @@ public void scrolltoSubmit() {
 			scrollUp();
 
 		}
-	scrollToElementUsingItsText("What worsens the pain?*");
-	//	return getDriver().findElement(
-		//		AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()" + ".scrollable(true)).scrollIntoView("
-			//			+ "new UiSelector().description(\"//android.widget.TextView[@text='8 of 12 questions']\"));"));
-
+		scrollToElementUsingItsText("What worsens the pain?*");
 	}
 
 	/**
@@ -2157,12 +2198,9 @@ public void scrolltoSubmit() {
 		clickOnTwelevOfTwelveSkipButton();
 	}
 
-	public void enterVitalsDetailsAndCompleteTenQuestions(String height, String weight, String bpSystolicValue,
-			String bpDiastolicValue, String pulse, String temperature, String spo2, String respiratoryRate)
-			throws InterruptedException {
+	public void enterVitalsAndCompleteVisit(JSONObject appData) throws InterruptedException {
 		// Enter patient vitals details
-		enterPatientVitalsDetails(height, weight, bpSystolicValue, bpDiastolicValue, pulse, temperature, spo2,
-				respiratoryRate);
+		enterPatientVitals(appData);
 
 		// Navigate to the next screen after entering vitals
 		clickOnFirstVitalsNextButton();
@@ -2180,59 +2218,65 @@ public void scrolltoSubmit() {
 		clickOnYesButton();
 
 		// Answer questions related to abdominal pain
-		//verifyAbdominalFirstQuestionIsDisplayed();
-		//verifyAllOptionsAreDisplayed();
+		// verifyAbdominalFirstQuestionIsDisplayed();
+		// verifyAllOptionsAreDisplayed();
 		clickUpperRightHypochondrium();
 		clickOnSubmitButton();
 
 		// Answer additional questions related to abdominal pain
-		//verifyTwoOfTwelveQuestionIsDisplayed();
-		//selectPainRadiatesOption();
-	//	clickOnGroin();
-		//clickOnPainRadiatesSubmitButton();
-clickOnDoesNotMoveOption();
+		// verifyTwoOfTwelveQuestionIsDisplayed();
+		/*
+		 * selectPainRadiatesOption(); clickOnGroin();
+		 * clickOnPainRadiatesSubmitButton();
+		 */
+		clickOnDoesNotMoveOption();
+
 		// Answer more questions related to abdominal pain
-		//verifyThreeOfTweleveQuestionsIsDisplayed();
+		// verifyThreeOfTweleveQuestionsIsDisplayed();
 		clickOnNumberSpinner();
 		selectTwo();
-		//verifyNumberTwoIsSelected();
+		// verifyNumberTwoIsSelected();
 		clickOnDurationSpinner();
 		selectDays();
-		//verifyDaysIsSelected();
+		// verifyDaysIsSelected();
 		clickOnThreeOfTwelveQuestionSubmitButton();
 
 		// Answer further questions related to abdominal pain
-	//	verifyFourOfTwelveQuestionsIsDisplayed();
+		// verifyFourOfTwelveQuestionsIsDisplayed();
 		clickOnGradualOption();
 
 		// Answer more questions related to abdominal pain
-	//	verifyFiveOfTwelveQuestonIsDisplayed();
+		// verifyFiveOfTwelveQuestonIsDisplayed();
 		selectNightOption();
 		clickOnSubmitButtonOfSixOfTwelveQusetions();
-
 		// Answer additional questions related to abdominal pain
-	//	verifySixOfTwelveQuestionsIsDisplayed();
+		// verifySixOfTwelveQuestionsIsDisplayed();
 		clickOnConstantOptionOfSixOfTweleveQuestions();
 		clickOnSubmitButtonOfSixOfTwelveQusetions();
 
 		// Answer more questions related to abdominal pain
-	//	verifySevenOfTwelveQuestionsIsDisplayed();
+		// verifySevenOfTwelveQuestionsIsDisplayed();
 		selectMildOneThreeOption();
 
 		// Answer additional questions related to abdominal pain
-	//	verifyEightOfTwelvequsetionsIsDisplayed();
+		// verifyEightOfTwelvequsetionsIsDisplayed();
 		selectCoughingOption();
 		clickOnSubmitButton();
 
 		// Answer more questions related to abdominal pain
-	//	verifyNineOfTwelveQuestionsIsDisplayed();
+		// verifyNineOfTwelveQuestionsIsDisplayed();
 		selectLeaningForward();
 		clickOnSubmitButtonOfNineOfTwelveQuestions();
 
 		// Answer remaining questions related to abdominal pain
-	//	verifyTenOfTwelveQuestionsIsDisplayed();
+		// verifyTenOfTwelveQuestionsIsDisplayed();
 		selectHasNotStartedMenstruationOption();
-	//	verifyElevenOfTwelveQuestionsIsDisplayed();
+		// verifyElevenOfTwelveQuestionsIsDisplayed();
+		selectNoneOption();
+		// verifyTwelveOfTwelveQuestionsIsDisplayed();
+
+		// Skip the last question
+		clickOnTwelevOfTwelveSkipButton();
 	}
 
 	public void verifyUserAllowedToSelectOneOptionInTenOfTwelveQuestion() throws InterruptedException {
@@ -2259,51 +2303,51 @@ clickOnDoesNotMoveOption();
 		clickOnSubmitButton();
 
 		// Answer additional questions related to abdominal pain
-	//	verifyTwoOfTwelveQuestionIsDisplayed();
-	//	selectPainRadiatesOption();
-		//clickOnGroin();
-	//	clickOnPainRadiatesSubmitButton();
-clickOnDoesNotMoveOption();
+		// verifyTwoOfTwelveQuestionIsDisplayed();
+		// selectPainRadiatesOption();
+		// clickOnGroin();
+		// clickOnPainRadiatesSubmitButton();
+		clickOnDoesNotMoveOption();
 		// Answer more questions related to abdominal pain
-		//verifyThreeOfTweleveQuestionsIsDisplayed();
+		// verifyThreeOfTweleveQuestionsIsDisplayed();
 		clickOnNumberSpinner();
 		selectTwo();
-		//verifyNumberTwoIsSelected();
+		// verifyNumberTwoIsSelected();
 		clickOnDurationSpinner();
 		selectDays();
-		//verifyDaysIsSelected();
+		// verifyDaysIsSelected();
 		clickOnThreeOfTwelveQuestionSubmitButton();
 
 		// Answer further questions related to abdominal pain
-	//	verifyFourOfTwelveQuestionsIsDisplayed();
+		// verifyFourOfTwelveQuestionsIsDisplayed();
 		clickOnGradualOption();
 
 		// Answer more questions related to abdominal pain
-	//	verifyFiveOfTwelveQuestonIsDisplayed();
+		// verifyFiveOfTwelveQuestonIsDisplayed();
 		selectNightOption();
 		clickOnSubmitButtonOfSixOfTwelveQusetions();
 
 		// Answer additional questions related to abdominal pain
-	//	verifySixOfTwelveQuestionsIsDisplayed();
+		// verifySixOfTwelveQuestionsIsDisplayed();
 		clickOnConstantOptionOfSixOfTweleveQuestions();
 		clickOnSubmitButtonOfSixOfTwelveQusetions();
 
 		// Answer more questions related to abdominal pain
-	//	verifySevenOfTwelveQuestionsIsDisplayed();
+		// verifySevenOfTwelveQuestionsIsDisplayed();
 		selectMildOneThreeOption();
 
 		// Answer additional questions related to abdominal pain
-	//	verifyEightOfTwelvequsetionsIsDisplayed();
+		// verifyEightOfTwelvequsetionsIsDisplayed();
 		selectCoughingOption();
 		clickOnSubmitButton();
 
 		// Answer more questions related to abdominal pain
-		//verifyNineOfTwelveQuestionsIsDisplayed();
+		// verifyNineOfTwelveQuestionsIsDisplayed();
 		selectLeaningForward();
 		clickOnSubmitButtonOfNineOfTwelveQuestions();
 
 		// Answer remaining questions related to abdominal pain
-	//	verifyTenOfTwelveQuestionsIsDisplayed();
+		// verifyTenOfTwelveQuestionsIsDisplayed();
 
 		click(hasNotStartedmenstruationOption, "Clicked on hasNotStartedMenstruation");
 		isDisplayed(elevenOfTwelveQuestions, "11 of 12 Questions is Displayed");
@@ -2323,10 +2367,12 @@ clickOnDoesNotMoveOption();
 			click(lastNoButton);
 		}
 	}
+
 	public void clickNoButtonInAssociatedSymptoms() {
 
 		click(lastNoButton);
-		}
+	}
+
 	public void checkSymptomsNoButton() {
 		for (int i = 0; i < 10; i++) {
 			click(lastNoButton);
@@ -2380,8 +2426,7 @@ clickOnDoesNotMoveOption();
 		return true && isDisplayedAssociatedSymptomsTitle;
 	}
 
-//method selects all twenty options for associated symptoms
-	public boolean selectValueFromSearchResultsAndVerify() throws InterruptedException {
+	public boolean selectValueFromSearchProtocolResultsAndVerify() throws InterruptedException {
 		// Navigate to the next screen after entering vitals
 		clickOnFirstVitalsNextButton();
 
@@ -2394,7 +2439,6 @@ clickOnDoesNotMoveOption();
 		executeCommand(adbCommand);
 		((PressesKey) getDriver()).pressKey(new KeyEvent(AndroidKey.TAB));
 		selectVisitReasonAsAbdominalPain();
-		
 		// click(selectedReasonLabel);
 		return isDisplayed(selectedReason, "Selected Resaon is Displayed")
 				&& isDisplayed(chipReason, "Chip reason is Displayed");
