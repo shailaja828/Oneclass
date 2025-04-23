@@ -286,7 +286,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Pain radiates to *']")
 	private WebElement painRadiates;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"Nested Question Item View Question TextView\"]")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Nested Question Item View Question TextView']")
 	private WebElement painRadiatesTo;
 	// android.widget.TextView[@text='Pain radiates to']
 	//// android.widget.TextView[@content-desc="Nested Question Item View Question

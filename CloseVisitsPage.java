@@ -125,7 +125,6 @@ public class CloseVisitsPage extends BaseTest {
 		click(lblOpenVisits, "Clicked on 'Close Visits'");
 		// Click on Close Visits again
 		click(closeVisitsButton, "Clicked on 'Close Visits' Button");
-
 		click(confirmButton, "Clicked on 'Confirm' Button");
 		isDisplayed(feedbackTitle, "Feedback Screen is displayed - Title");
 	}
@@ -155,13 +154,9 @@ public class CloseVisitsPage extends BaseTest {
 	// Enter feedback and verify the process
 	public void enterFeedbackAndverify() throws InterruptedException {
 		click(lblOpenVisits, "Clicked on 'Close Visits'");
-
-		// Click on Close Visits again
 		click(closeVisitsButton, "Clicked on 'Close Visits'");
-		// click(closeVisitsButton, "Clicked on 'Close Visits' Button");
 		click(confirmButton, "Clicked on 'Confirm' Button");
 		isDisplayed(feedbackTitle, "Feedback Screen is displayed - Title");
-
 		sendKeys(feedbackTextField, "Testing", "Entered feedback: 'Testing'");
 		click(submitButton, "Clicked on 'Submit' Button");
 	}
