@@ -288,9 +288,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Nested Question Item View Question TextView']")
 	private WebElement painRadiatesTo;
-	// android.widget.TextView[@text='Pain radiates to']
-	//// android.widget.TextView[@content-desc="Nested Question Item View Question
-	// TextView"]
+	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Right shoulder']")
 	private WebElement rightShoulder;
 
@@ -312,9 +310,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	private WebElement rightGroin;
 	@AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"Chips for Reason Item TextView\"])[19]")
 	private WebElement leftGroin;
-	// (//android.widget.TextView[@content-desc="Chips for Reason Item
-	// TextView"])[19]
-	// android.widget.TextView[@text='Left groin']
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Chest']")
 	private WebElement chest;
 	@AndroidFindBy(accessibility = "Nested Question Item View Submit Button")
@@ -1777,7 +1772,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 
 	public void selectLeaningForward() throws InterruptedException {
 		Thread.sleep(3000);
-		;
 		click(leaningForwardOption);
 	}
 

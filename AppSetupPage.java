@@ -49,12 +49,7 @@ public class AppSetupPage extends BaseTest {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Allow Intelehealth to access photos and media on your device?']")
 	public WebElement accessPhotosTextView;
 
-	// Language Selection Elements
-	// accessibility = "Splash Screen Bottom Language Panel Save Selected Language
-	// Button"
-//accessibility id	Splash Screen Bottom Language Panel Save Selected Language Button
-	// xpath =
-	// "//android.widget.Button[@resource-id=\"org.intelehealth.app:id/btn_next_to_intro\"]"
+
 	@AndroidFindBy(id = "org.intelehealth.app:id/btn_next_to_intro")
 	private WebElement nextButton;
 
@@ -70,17 +65,31 @@ public class AppSetupPage extends BaseTest {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Take patient visits']")
 	private WebElement takePatientVisits;
 
-	// this needs to be changed but same as above hence negotiating
-
 //	@AndroidFindBy(accessibility = "Intro Screen Third Title TextView")
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Provide prescriptions']")
 	private WebElement providePrescriptions;
 
 	// @AndroidFindBy(accessibility = "Intro Screen Skip Screen Button")
 	@AndroidFindBy(id = "org.intelehealth.app:id/btn_skip_intro")
+
 	private WebElement skipButton;
 
 	// Ayu Intro Screen Elements
+
+	@AndroidFindBy(accessibility = "Setup Ayu Intro Screen Hello TextView")
+	private WebElement helloIamAyu;
+
+	@AndroidFindBy(accessibility = "Setup Ayu Intro Screen Subtitle TextView")
+	private WebElement ayuIntroScreenSubtitle;
+
+	@AndroidFindBy(accessibility = "Setup Ayu Intro Screen Accept TnC And PP CheckBox")
+	private WebElement checkBox;
+
+	@AndroidFindBy(accessibility = "Setup Ayu Intro Screen Setup Button")
+	private WebElement setupButton;
+
+	@AndroidFindBy(accessibility = "Setup Ayu Intro Screen Accept TnC And PP TextView 2")
+	private WebElement termsAndCondition;
 
 //	@AndroidFindBy(accessibility = "Setup Ayu Intro Screen Hello TextView")
 	@AndroidFindBy(id = "org.intelehealth.app:id/tv_hello_ayu")
@@ -155,7 +164,13 @@ public class AppSetupPage extends BaseTest {
 
 	@AndroidFindBy(id = "//android.widget.TextView[@text='Telemedicine Clinic 1']")
 	private WebElement location;
+	// @AndroidFindBy(xpath = "//android.widget.RelativeLayout[@content-desc='Setup
+	// Screen Parent
+	// RelativeLayout']/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView[2]")
+	@AndroidFindBy(id = "//android.widget.TextView[@text='Telemedicine Clinic 1']")
+	private WebElement location;
 
+	// @AndroidFindBy(accessibility = "Setup Screen Setup Button")
 	@AndroidFindBy(id = "org.intelehealth.app:id/btn_setup")
 	private WebElement setupScreeenSetupButton;
 
@@ -219,11 +234,10 @@ public class AppSetupPage extends BaseTest {
 	public void handlePermissions() throws InterruptedException {
 
 		click(whileUsingAppButton);
-		for (int i = 0; i < 3; i++) { // Adjust the loop count if needed
+		for (int i = 0; i <= 3; i++) { // Adjust the loop count if needed
 			click(allowButton);
 		}
 		click(btnAllowAll);
-
 	}
 
 	// Click on Next button
@@ -282,14 +296,7 @@ public class AppSetupPage extends BaseTest {
 	public List<String> getIntroductoryScreenText() {
 		return getElementsText(whoWeAre, takePatientVisits, providePrescriptions);
 	}
-
-	// Verify Skip button is displayed
-	/**
-	 * public void skipButtonIsDisplayed() throws InterruptedException {
-	 * isDisplayed(skipButton, "Skip button is displayed"); }
-	 * 
-	 * @throws CustomElementNotFoundException
-	 */
+	
 	public boolean skipButtonIsDisplayed() throws InterruptedException {
 		if (isDisplayed2(skipButton, "Skip button is displayed")) {
 			return true;
@@ -306,11 +313,7 @@ public class AppSetupPage extends BaseTest {
 				&& isDisplayed(setupButton, "Setup Button is displayed");
 	}
 
-	/**
-	 * need to check
-	 * 
-	 * @return
-	 */
+
 	public List<String> getPolicyTexts() {
 		return getElementsText(termsAndCondition, privacyPolicy);
 	}
@@ -357,24 +360,18 @@ public class AppSetupPage extends BaseTest {
 	}
 
 	public List<String> getSetUpScreenLabels() {
-		return getElementsText(lblSetUpHeader, lblPleaseEnterDetails, lblLocation, lblUsername, lblPassword);
+		return getElementsText(lblSetUpHeader, lblPleaseEnterDetails, lblLocation, location, lblPassword);
+
 	}
 
-	// Perform login
 	public void login(String un, String pw) throws InterruptedException {
 		// Click on the dropdown to open the menu
 
 		click(dropdown);
 		// Click on the location element to select a location
-
-		// click(location);
-		// Enter the username into the username field
-
+		click(location);
 		sendKeys(username, un);
-		// Enter the password into the password field
-
 		sendKeys(password, pw);
-		// Click on the setup screen setup button to complete the login process
 		click(setupScreeenSetupButton);
 
 		// Handling display over other apps
@@ -394,7 +391,7 @@ public class AppSetupPage extends BaseTest {
 		// Check if locationName is displayed after the actions
 		isDisplayed(locationName);
 	}
-
+	
 	public void refreshUIAndWait() throws InterruptedException {
 		click(refreshButton);
 		// Thread.sleep(26000);
@@ -447,7 +444,5 @@ public class AppSetupPage extends BaseTest {
 		String decryptedPassword = decrypt(encryptedPassword);
 		System.out.println("Decrypted Password: " + decryptedPassword);
 		login(decryptedUserName, decryptedPassword);
-
 	}
-
 }

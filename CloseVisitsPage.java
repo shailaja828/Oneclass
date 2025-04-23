@@ -1,5 +1,12 @@
 package com.intelehealth.pages;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoUnit;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -12,16 +19,24 @@ import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import org.openqa.selenium.WebElement;
-
+import com.aventstack.extentreports.Status;
 import com.intelehealth.base.BaseTest;
-
+import com.intelehealth.reports.ExtentReport;
+import com.intelehealth.base.BaseTest;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 public class CloseVisitsPage extends BaseTest {
-	
+
 	/**
 	 * modified locators IDA 4.0 TO IDA 5.0 On 8th April 2025 by @SHAILAJA
 	 */
@@ -98,8 +113,6 @@ public class CloseVisitsPage extends BaseTest {
 	public boolean verifyCloseVisitButtonFunctionality() throws InterruptedException {
 		click(lblOpenVisits, "Clicked on 'Close Visits'");
 		click(backArrow, "Clicked on back arrow");
-
-		// Wait for some time to ensure the elements are loaded
 		Thread.sleep(10000);
 
 		// Click on Close Visits again
@@ -123,17 +136,12 @@ public class CloseVisitsPage extends BaseTest {
 	 */
 	public void verifyConfirmButtonFunctionality() throws InterruptedException {
 		click(lblOpenVisits, "Clicked on 'Close Visits'");
-		// Click on Close Visits again
 		click(closeVisitsButton, "Clicked on 'Close Visits' Button");
 		click(confirmButton, "Clicked on 'Confirm' Button");
 		isDisplayed(feedbackTitle, "Feedback Screen is displayed - Title");
 	}
 
-	/**
-	 * @author @SrinivasBandi
-	 * @return String
-	 */
-
+	
 	public String getFeedbackTitle() {
 		return feedbackTitle.getText();
 	}
@@ -151,16 +159,15 @@ public class CloseVisitsPage extends BaseTest {
 	 * @throws InterruptedException
 	 */
 
-	// Enter feedback and verify the process
 	public void enterFeedbackAndverify() throws InterruptedException {
 		click(lblOpenVisits, "Clicked on 'Close Visits'");
+		// Click on Close Visits again
 		click(closeVisitsButton, "Clicked on 'Close Visits'");
 		click(confirmButton, "Clicked on 'Confirm' Button");
 		isDisplayed(feedbackTitle, "Feedback Screen is displayed - Title");
 		sendKeys(feedbackTextField, "Testing", "Entered feedback: 'Testing'");
 		click(submitButton, "Clicked on 'Submit' Button");
 	}
-
 	// Scroll to the 'Older Visits' section and close visits in both recent and
 
 	public WebElement scrollToOlderVisits() {
@@ -175,13 +182,10 @@ public class CloseVisitsPage extends BaseTest {
 		click(closeVisitsButton, "Clicked on 'Close Visits' Button");
 		boolean closeVisitTitle = isDisplayed(closeVisitPopupTitle, "Close Visit Popup is displayed - Title")
 				&& isDisplayed(closeVisitPopupSubTitle, "Close Visit Popup is displayed - Subtitle");
-
 		click(confirmButton, "Clicked on 'Confirm' Button");
 		boolean feedbacktitle = isDisplayed(feedbackTitle, "Feedback Screen is displayed - Title");
 		sendKeys(feedbackTextField, "Testing", "Entered feedback: 'Testing'");
 		click(submitButton, "Clicked on 'Submit' Button");
-
-		// Close visits in the Older Visits section
 		click(lblOpenVisits, "Clicked on 'Close Visits'");
 		scrollToOlderVisits();
 		click(olderVisitsCloseButton, "Clicked on 'Close' Button for Older Visits");
@@ -202,7 +206,6 @@ public class CloseVisitsPage extends BaseTest {
 	// Verify elements in the Recent Visits section
 	public boolean verifyRecentVisitsSection() throws InterruptedException {
 		click(lblOpenVisits, "Clicked on 'Close Visits'");
-
 		return isDisplayed(recentVisitsTitle, "Recent Visits Section - Title") &&
 
 				isDisplayed(recentVisitsPatientName, "Recent Visits Section - Patient Name")
@@ -353,7 +356,6 @@ public class CloseVisitsPage extends BaseTest {
 
 		// Click on Close Visits again
 		click(lblOpenVisits, "Clicked on 'Close Visits'");
-
 		// Counter for the number of recent visits
 		int recentVisitsCount = 0;
 
@@ -397,6 +399,50 @@ public class CloseVisitsPage extends BaseTest {
 		// Fail the test case if no recent visits are found
 		assert recentVisitsCount > 0 : "No visits are from the last 7 days.";
 		System.out.println("Number of recent visits: " + recentVisitsCount);
+	}
+	/**
+	 * \
+	 * 
+	 * @author @SrinivasBandi
+	 * @throws ParseException
+	 */
+	// Method to parse the date string into a Date object
+	private Date parseDate(String dateText) throws ParseException {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM 'at' hh:mm a", Locale.ENGLISH);
+		return dateFormat.parse(dateText);
+	}
+
+	// Method to check if the extracted date is before the date 7 days ago
+	public boolean isOlderThan7Days(WebElement dateElement) throws ParseException {
+		Date currentDate = new Date();
+		Date date7DaysAgo = new Date(currentDate.getTime() - (7L * 24 * 60 * 60 * 1000));
+
+		String dateText = dateElement.getText();
+		Date extractedDate = parseDate(dateText);
+
+		return extractedDate.before(date7DaysAgo);
+	}
+
+	// Method to check if all elements in the list have dates not within the last 7
+	// days
+	public boolean checkAllElementsForOldDates() throws ParseException {
+		int scrollCount = 0;
+		for (int i = 0; i < cards.size(); i++) {
+			if (!isOlderThan7Days(cards.get(i))) {
+				return false; // The date is within the last 7 days, handle accordingly
+			}
+			if (i == cards.size() - 1) {
+				i = 0;
+				scrollDown();
+				scrollCount++;
+			}
+			if (scrollCount == 3) {
+				break;
+			}
+		}
+		return true; // All dates checked are not within the last 7 days
+	}
+
 	}
 
 	/**

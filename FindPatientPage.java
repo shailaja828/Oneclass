@@ -17,6 +17,27 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 public class FindPatientPage extends BaseTest {
 	
 	// Page elements using AndroidFindBy annotation
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Find Patients']")
+	private WebElement findPatients;
+	
+	@AndroidFindBy(accessibility = "Find Patient Screen Search Bar EditText")
+	private WebElement findPatientSearchBar;
+	
+	@AndroidFindBy(accessibility = "Find Patient Screen Search ImageView")
+	private WebElement findPatientSearchIcon;
+
+	@AndroidFindBy(accessibility = "//android.widget.TextView[@text='Automation Rana']")
+	private WebElement automationOnePatient;
+
+	@AndroidFindBy(accessibility = "No Patient Found Placeholder Title TextView -Patient not found ")
+	private WebElement patientNotFound;
+
+	@AndroidFindBy(accessibility = "No Patient Found Placeholder Subtitle TextView-description")
+	private WebElement noPatientFoundSubTitle;
+
+	@AndroidFindBy(accessibility = "No Patient Found Placeholder 'Add New Patient' Text TextView-Add new patient")
+	private WebElement addNewPatientCTAButton;
+
 	@AndroidFindBy(id = "org.intelehealth.app:id/textlayout_find_patient")
 	private WebElement findPatients;
 	
@@ -64,18 +85,12 @@ public class FindPatientPage extends BaseTest {
 		// KeyEvent(AndroidKey.ENTER)));
 
 		// click(findPatientSearchBar);
-		//String textToEnter = "AutomationRana";
+		String textToEnter = "AutomationRana";
 		String adbCommand = String.format("adb shell input text %s", txt);
 		executeCommand(adbCommand);
 		executeCommand("adb shell input keyevent 84");
 		((PressesKey) getDriver()).pressKey(new
 				KeyEvent(AndroidKey.ENTER));
-//	//((PressesKey) getDriver()).pressKey(new KeyEvent(AndroidKey.TAB));
-//	((PressesKey) getDriver()).pressKey(new KeyEvent(AndroidKey.ENTER));
-
-		// ((PressesKey) getDriver()).pressKey(new
-		// KeyEvent().withKey(AndroidKey.SEARCH));
-		// pressEnter(findPatientSearchBar);
 	}
 
 	public static void executeCommand(String command) {
@@ -86,8 +101,6 @@ public class FindPatientPage extends BaseTest {
 			e.printStackTrace();
 		}
 	}
-
-// Method to verify the presence of the searched patient
 	public String verifySearchedPatient() {
 			return automationOnePatient.getText();
 	}
@@ -96,13 +109,16 @@ public class FindPatientPage extends BaseTest {
 		return isDisplayed(automationOnePatient, "Patient is Displayed");
 	}
 	
-
-// Method to enter an invalid patient name in the search box and press Enter
 	public void enterInvalidPatienTName(String txt) throws InterruptedException {
 		sendKeys(findPatientSearchBar, txt);
 	}
 
-//Method to verify the elements when an invalid patient is searched
+	public void verifyInvalidPatientSearch() {
+		isDisplayed(patientNotFound, "Patient not founf msg is displayed");
+		isDisplayed(noPatientFoundSubTitle, "");
+		isDisplayed(addNewPatientCTAButton, "");
+	}
+
 	public boolean verifyInvalidPatientSearch() {
 		return isDisplayed(patientNotFound, "Patient not founf msg is displayed")
 	&&	isDisplayed(noPatientFoundSubTitle, "")

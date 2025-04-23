@@ -10,6 +10,16 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class ChangeLanguageAndProtocolPage extends BaseTest {
 	
+	
+	@AndroidFindBy(accessibility = "Language Protocol Change Language Spinner TextView")
+	private WebElement languageSpinner;
+
+	@AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"Simple Dialog ListItem Title TextView\"])[2]")
+	private WebElement hindi;
+
+	@AndroidFindBy(accessibility = "Patient Registration Dialog Positive (Yes) Button")
+	private WebElement btnYes;
+
 	@AndroidFindBy(id = "org.intelehealth.app:id/lang_spinner_txt")
 	private WebElement languageSpinner;
 
@@ -28,15 +38,36 @@ public class ChangeLanguageAndProtocolPage extends BaseTest {
 	@AndroidFindBy(accessibility = "Language Protocol Reset Language Button RelativeLayout")
 	private WebElement btnReset;
 
-	// android.widget.CheckedTextView[@text='Change language & protocol']
-//
 	@AndroidFindBy(xpath = "//android.widget.CheckedTextView[@text='Change language & protocol']")
 	private WebElement changeLangProtocol;
-//
+
+	@AndroidFindBy(accessibility = "Patient Registration Dialog Title TextView")
+	private WebElement changeLangTitleInDialog;
+
+	@AndroidFindBy(accessibility = "Patient Registration Dialog Subtitle TextView")
+	private WebElement changeLangSubTitleInDialog;
+
+	@AndroidFindBy(accessibility = "Language Protocol Refresh ImageButton")
+	private WebElement icnSync;
+
+	@AndroidFindBy(accessibility = "Snackbar Content TextView")
+	private WebElement toastLanguageSaved;
+
+	@AndroidFindBy(accessibility = "Language Protocol Update Protocol RelativeLayout")
+	private WebElement btnUpdateProtocolInChangeLanguage;
+
+	@AndroidFindBy(accessibility = "Update Protocol Dialog Server Url AutoCompleteTextView")
+	private WebElement txtServerURL;
+
+	@AndroidFindBy(accessibility = "Update Protocol Dialog License Key AutoCompleteTextView")
+	private WebElement txtLicenseKey;
+
+	@AndroidFindBy(accessibility = "Update Protocol Dialog Positive (Update) Button")
+	private WebElement btnUpdateProtocol;
+
 	@AndroidFindBy(id = "org.intelehealth.app:id/dialog_title")
 	private WebElement changeLangTitleInDialog;
 	
-
 	@AndroidFindBy(id = "org.intelehealth.app:id/dialog_subtitle")
 	private WebElement changeLangSubTitleInDialog;
 
@@ -106,6 +137,9 @@ public class ChangeLanguageAndProtocolPage extends BaseTest {
 	public void clickOnResetButton() {
 		click(btnReset);
 	}
+
+	public String getLanguageChangedSuccessFullyText() {
+		return toastLanguageSaved.getText();
 
 	public String selectedLanguageTextInDropdown() {
 		return txtSelectedLanguage.getText();

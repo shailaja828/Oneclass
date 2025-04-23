@@ -11,7 +11,6 @@ import com.aventstack.extentreports.Status;
 import com.intelehealth.base.BaseTest;
 import com.intelehealth.reports.ExtentReport;
 import com.intelehealth.utils.TestUtils;
-
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class LoginMenuPage extends BaseTest {
@@ -83,7 +82,7 @@ public class LoginMenuPage extends BaseTest {
 
 		}
 	}
-	// Methods for Page Actions
+
 	// Click on the hamburger menu icon
 	public void clickOnHamburgerMenu() throws InterruptedException {
 		click(menu);
@@ -96,7 +95,7 @@ public class LoginMenuPage extends BaseTest {
 
 	// Verify if the "Welcome Back" title is displayed on the login screen
 	public void verifyWelcomeBackTitle() throws InterruptedException {
-		isDisplayed(loginScreenWelcomeBackTitle, "Welcome Back title is displayed on the login screen");
+	    isDisplayed(loginScreenWelcomeBackTitle, "Welcome Back title is displayed on the login screen");
 	}
 
 	// Perform login with the provided username and password
@@ -158,15 +157,9 @@ public class LoginMenuPage extends BaseTest {
 
 	// Click on the "Yes" button
 	public void clickOnYes() throws InterruptedException {
-		click(yesButton, "Clicked on the Yes button");
+	    click(yesButton, "Clicked on the Yes button");
 	}
 
-	/**
-	 * Updated by Srinivas
-	 * 
-	 * @return
-	 * @throws InterruptedException
-	 */
 	// Verify if the location name is displayed
 	public boolean verifyLocationIsDisplayed() throws InterruptedException {
 		return isDisplayed(locationName, "Location name is displayed");
@@ -193,8 +186,5 @@ public class LoginMenuPage extends BaseTest {
 		click(resetAppYesButton, "Confirmed app reset by clicking on Yes button");
 
 		return isDisplayed(synchingApp, "Verified that the app is synchronizing");
-		
-
 	}
-
 }
