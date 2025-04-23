@@ -821,7 +821,6 @@ addNewPatientPage.enterPhoneNumber();
 
 		// Proceed to the next step of patient addition.
 		addNewPatientPage.clickOnNextButton1();
-
 		// Select the state for the patient's address.
 	//	addNewPatientPage.clickOnStateSpinner();
 		//addNewPatientPage.scrollToViewState();
@@ -868,6 +867,7 @@ addNewPatientPage.enterPhoneNumber();
 
 		// Verify that the national ID update is successful.
 		boolean updatedNationalID = addNewPatientPage.verifyNationalIDUpdateIsSuccessful(appData.getJSONObject("personalDetails").getString("updatedNationalId"));
+		
 		Assert.assertEquals(nationalID, updatedNationalID);
 	}
 
