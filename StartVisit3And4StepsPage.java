@@ -1386,7 +1386,6 @@ public class StartVisit3And4StepsPage extends BaseTest {
 		handleHypertensionVisitQuestions();
 		answerPhysicalExaminationQuestions();
 		answerMedicalHistoryQuestions();
-
 		enterDataInTextBoxAndSubmit();
 		click(familyHistoryConfirmButton, "Clicked on confirm button");
 		scrollToAdditionalDocuments();
