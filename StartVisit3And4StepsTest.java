@@ -214,7 +214,7 @@ public void IDA4_2575_verifyTwoOfSixQuestionNormalPaleOption() throws Interrupte
 		startVisit3And4StepsPage.verifyFourOfSixQuestionIsDisplayedWithOptions();
 
 	//	 Verify that four out of six questions have options
-		
+
 		startVisit3And4StepsPage.verifyFourOfSixQuestionsOptions();
 
 		
@@ -235,9 +235,7 @@ public void IDA4_2575_verifyTwoOfSixQuestionNormalPaleOption() throws Interrupte
 		startVisit3And4StepsPage.verifySixOfSixQuestionsIsDisplayedWithOptions();
 	
 	}
-	
-	
-	///////////////////*************************************************************************************************************************
+
 	@Test(priority = 14, description = "Verify when user clicks -No oedema/In left/In right/Both option in 6 of 6", enabled = true)
 	public void IDA4_2607_verifySixofSixQuestionsOptions() throws InterruptedException {
 		startVisit3And4StepsPage.verifySixOfSixQuestionsIsDisplayedWithOptions();

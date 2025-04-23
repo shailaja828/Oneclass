@@ -8,6 +8,7 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -63,6 +64,7 @@ public class FindPatientTest extends BaseTest {
 		// Enter the valid patient name into the search box
 		findPatientPage.enterValueInSearchBox(appData.getJSONObject("validPatient").getString("patientName"));
 		// Enter valid patient name and verify the search result
+		findPatientPage.verifySearchedPatient();
 		Assert.assertTrue(findPatientPage.isDisplayedSearchedPatient());
 		
 		Assert.assertEquals(findPatientPage.verifySearchedPatient(), expectedAssertProp.getProperty("searched.patient.name"));
@@ -75,6 +77,7 @@ public class FindPatientTest extends BaseTest {
 		// Enter invalid patient name and verify the search result
 		findPatientPage.enterValueInSearchBox(appData.getJSONObject("inValidPatient").getString("patientName"));
 		// Verify that the system correctly handles an invalid patient search
+		findPatientPage.verifyInvalidPatientSearch();
 		Assert.assertTrue(findPatientPage.verifyInvalidPatientSearch());
 		
 		Assert.assertEquals(findPatientPage.getInvalidPatientSearch(),
@@ -84,12 +87,15 @@ public class FindPatientTest extends BaseTest {
 						expectedAssertProp.getProperty("findpatient.addnewpatient.text")));
 		
 		
-
-	}
+}
 
 	@Test(priority = 3, description = " Verify the Search functionality by entering invalid patient id in the search box", enabled = true)
 	public void IDA4_2226_verifyInvalidPatientIdSearch() throws JSONException, InterruptedException {
 		
+		// Enter invalid patient id and verify the search result
+		findPatientPage.enterValueInSearchBox(appData.getJSONObject("invalidPatientID").getString("Id"));
+		// Verify that the system correctly handles an invalid patient search
+		findPatientPage.verifyInvalidPatientSearch();
 		// Enter invalid patient id and verify the search resultfindPatientPage.getInvalidPatientSearch
 		findPatientPage.enterValueInSearchBox(appData.getJSONObject("invalidPatientID").getString("Id"));
 		// Verify that the system correctly handles an invalid patient search

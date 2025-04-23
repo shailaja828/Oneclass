@@ -73,12 +73,19 @@ public class StartVisit1And2StepsTest extends BaseTest {
 
 	}
 
+<<<<<<< HEAD
+	@Test(priority = 1, description = "Verify the UI of first page of Vitals (1/4 Vitals)", enabled = true)
+=======
 	@Test(priority = 1, description = "Verify the UI of first page of Vitals (1/4 Vitals)", enabled = false)
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	public void IDA4_2413_verifyVitalsScreenUi() throws InterruptedException, IOException {
 
 // Verify UI elements of the First Vitals Screen on the Start Visit page
 		startVisit1And2StepsPage.verifyUiOfFirstVitalsScreen();
+<<<<<<< HEAD
+=======
 
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 		Assert.assertEquals(startVisit1And2StepsPage.getUIElementsOfVitalsScreen(),
 				Arrays.asList(expectedAssertProp.getProperty("vitals.screen.enter.patient.body.measurements.label"),
 						expectedAssertProp.getProperty("vitals.screen.enter.patient.vitals.label"),
@@ -90,6 +97,15 @@ public class StartVisit1And2StepsTest extends BaseTest {
 						expectedAssertProp.getProperty("vitals.screen.pulse.bpm.label"),
 						expectedAssertProp.getProperty("vitals.screen.temperature.label"),
 						expectedAssertProp.getProperty("vitals.screen.sp02.label"),
+<<<<<<< HEAD
+						expectedAssertProp.getProperty("vitals.screen.respiratory.breaths.label")));
+
+	}
+
+	@Test(priority = 2, description = "Verify the functionality of Next button on 1st vital screen", enabled = true)
+	public void IDA4_2415_verifyNextButtonFunctionality() throws InterruptedException {
+
+=======
 						expectedAssertProp.getProperty("vitals.screen.respiratory.breaths.label"),
 						expectedAssertProp.getProperty("vitals.screen.blood.group.label")));
 
@@ -104,11 +120,15 @@ public class StartVisit1And2StepsTest extends BaseTest {
 	@Test(priority = 2, description = "Verify the functionality of Next button on 1st vital screen", enabled = false)
 	public void IDA4_2415_verifyNextButtonFunctionality() throws InterruptedException {
 		startVisit1And2StepsPage.enterPatientVitals(appData);
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 // Click on the "Next" button on the First Vitals Screen of the Start Visit page
 		startVisit1And2StepsPage.clickOnFirstVitalsNextButton();
 
 // Verify that the Vitals Summary Screen is displayed after clicking the "Next" button
+<<<<<<< HEAD
+=======
 
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 		Assert.assertTrue(startVisit1And2StepsPage.verifyVitailsSummaryScreenIsDisplayed());
 
 		Assert.assertEquals(startVisit1And2StepsPage.getVitalSummaryTitle(),
@@ -116,7 +136,11 @@ public class StartVisit1And2StepsTest extends BaseTest {
 
 	}
 
+<<<<<<< HEAD
+	@Test(priority = 3, description = "Verify the functionality of BM index(auto-calculated) textfield on 1st vital screen", enabled = true)
+=======
 	@Test(priority = 3, description = "Verify the functionality of BM index(auto-calculated) textfield on 1st vital screen", enabled = false)
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	public void IDA4_2419_verifyBMIValueIsAutoCalculated() throws JSONException, InterruptedException {
 
 		ExtentReport.startTest("IDA4_2419_verifyBMIValueIsAutoCalculated",
@@ -134,6 +158,9 @@ public class StartVisit1And2StepsTest extends BaseTest {
 
 	}
 
+<<<<<<< HEAD
+	@Test(priority = 4, description = "Verify the UI of Vital summary", enabled = true)
+=======
 	/**
 	 * Locators are missing for vitals summary screen
 	 * 
@@ -141,6 +168,7 @@ public class StartVisit1And2StepsTest extends BaseTest {
 	 */
 
 	@Test(priority = 4, description = "Verify the UI of Vital summary", enabled = false)
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	public void IDA4_2429_verifyTheUiOfVitalSummary() throws InterruptedException {
 		// Click on the "Next" button on the First Vitals Screen of the Start Visit page
 		startVisit1And2StepsPage.clickOnFirstVitalsNextButton();
@@ -165,7 +193,11 @@ public class StartVisit1And2StepsTest extends BaseTest {
 	 * @author SrinivasBandi
 	 * 
 	 */
+<<<<<<< HEAD
+	@Test(priority = 5, description = "Verify the status of BMI index by changing different height & weight and if editable field", enabled = true)
+=======
 	@Test(priority = 5, description = "Verify the status of BMI index by changing different height & weight and if editable field", enabled = false)
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	public void IDA4_2421_checkBMIStatusWithDifferentValues() throws JSONException, InterruptedException {
 		ExtentReport.startTest("IDA4_2421_checkBMIStatusWithDifferentValues",
 				"Verify the status of BMI index by changing different height & weight and if editable field");
@@ -219,6 +251,9 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		 */
 	}
 
+<<<<<<< HEAD
+	@Test(priority = 6, description = "Verify the details section on Vital summary", enabled = true)
+=======
 	/**
 	 * Locators are missing for vitals summary screen
 	 * 
@@ -226,6 +261,7 @@ public class StartVisit1And2StepsTest extends BaseTest {
 	 */
 
 	@Test(priority = 6, description = "Verify the details section on Vital summary", enabled = false)
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	public void IDA4_2430_verifyDeatilsOnVitalSummaryScreen() throws JSONException, InterruptedException {
 // Enter patient vitals details using data from the appData object
 		startVisit1And2StepsPage.enterPatientVitals(appData);
@@ -247,6 +283,13 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		IntStream.range(0, actualVitalsDetailsInSummary.size()).parallel().forEach(i -> {
 			String actual = actualVitalsDetailsInSummary.get(i);
 			String expected = expectedVitalsDetailsInSummary.get(i);
+<<<<<<< HEAD
+					});
+
+	}
+
+	@Test(priority = 7, description = "Verify clicking on the change button of details section on Vital summary", enabled = true)
+=======
 		});
 
 	}
@@ -258,12 +301,19 @@ public class StartVisit1And2StepsTest extends BaseTest {
 	 */
 
 	@Test(priority = 7, description = "Verify clicking on the change button of details section on Vital summary", enabled = false)
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	public void IDA4_2432_VerifyChangeButtonOfVitalSummaryScreen() throws JSONException, InterruptedException {
 // Entering patient vitals details on the startVisit1And2StepsPage
 		startVisit1And2StepsPage.enterPatientVitals(appData);
 
 		startVisit1And2StepsPage.clickOnFirstVitalsNextButton();
 		startVisit1And2StepsPage.clickOnChangeInVitalsSummaryScreen();
+<<<<<<< HEAD
+	
+	}
+
+	@Test(priority = 8, description = "Verify that the updated 1/4 details are saved", enabled = true)
+=======
 
 	}
 
@@ -274,6 +324,7 @@ public class StartVisit1And2StepsTest extends BaseTest {
 	 */
 
 	@Test(priority = 8, description = "Verify that the updated 1/4 details are saved", enabled = false)
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	public void IDA4_2433_VerifyVitalsdetailsAreSaved() throws JSONException, InterruptedException {
 // Entering patient vital details using the appData JSON object
 		startVisit1And2StepsPage.enterPatientVitals(appData);
@@ -306,6 +357,12 @@ public class StartVisit1And2StepsTest extends BaseTest {
 						appData.getJSONObject("patientVitalsSummaryEditDetails").getString("spo2"),
 						appData.getJSONObject("patientVitalsSummaryEditDetails").getString("respiratoryRate"),
 						appData.getJSONObject("patientVitalsSummaryEditDetails").getString("bmi")));
+<<<<<<< HEAD
+	
+	}
+
+	@Test(priority = 9, description = "Verify the functionality of Confirm button on 1/4 vital summary screen", enabled = true)
+=======
 
 	}
 
@@ -316,6 +373,7 @@ public class StartVisit1And2StepsTest extends BaseTest {
 	 */
 
 	@Test(priority = 9, description = "Verify the functionality of Confirm button on 1/4 vital summary screen", enabled = false)
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	public void IDA4_2435_verifyConfirmButtonfuntionality() throws JSONException, InterruptedException {
 // Entering patient vitals details using data from the appData JSON object
 		startVisit1And2StepsPage.enterPatientVitals(appData);
@@ -337,6 +395,10 @@ public class StartVisit1And2StepsTest extends BaseTest {
 //Clicks on the 1/4 vitals screen next button
 		startVisit1And2StepsPage.clickOnFirstVitalsNextButton();
 //Clicks On confirm button
+<<<<<<< HEAD
+		startVisit1And2StepsPage.clickOnConfirmButton();
+//Select the Abdominal pain reason
+=======
 
 		/**
 		 * Locators are missing for vitals summary screen
@@ -347,12 +409,15 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		/// startVisit1And2StepsPage.clickOnConfirmButton();
 //Select the Abdominal pain reason
 
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 		startVisit1And2StepsPage.selectVisitReasonAsAbdominalPain();
 //Verify the abdominal pain is selected
 		Assert.assertTrue(startVisit1And2StepsPage.verifyVisitReasonAbdominalPainIsSelected());
 
 	}
 
+<<<<<<< HEAD
+=======
 	/*************/
 	/*************/
 	/*************/
@@ -363,6 +428,7 @@ public class StartVisit1And2StepsTest extends BaseTest {
 	/*************/
 	/*************/
 
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	@Test(priority = 11, description = "Verify user can remove the selected reason", enabled = true)
 	public void IDA4_2439_VerifyTheFunctionalityOfRemoveOption() throws JSONException, InterruptedException {
 // Start entering patient vitals details
@@ -371,6 +437,15 @@ public class StartVisit1And2StepsTest extends BaseTest {
 // Click on the "Next" button after entering patient vitals
 		startVisit1And2StepsPage.clickOnFirstVitalsNextButton();
 		// click On confirm button
+<<<<<<< HEAD
+		startVisit1And2StepsPage.clickOnConfirmButton();
+// Select the visit reason as Abdominal Pain
+		startVisit1And2StepsPage.selectVisitReasonAsAbdominalPain();
+		startVisit1And2StepsPage.selectVisitReasonAsAbdominalPain();
+
+		// Verify that the selected reason is removed
+		// Assert.assertFalse(startVisit1And2StepsPage.verifySelectedReasonIsRemoved());
+=======
 		/// startVisit1And2StepsPage.clickOnConfirmButton();
 // Select the visit reason as Abdominal Pain
 		startVisit1And2StepsPage.selectVisitReasonAsAbdominalPain();
@@ -380,6 +455,7 @@ public class StartVisit1And2StepsTest extends BaseTest {
 
 		// Verify that the selected reason is removed
 		Assert.assertFalse(startVisit1And2StepsPage.verifySelectedReasonIsRemoved());
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 
 	}
 
@@ -391,7 +467,11 @@ public class StartVisit1And2StepsTest extends BaseTest {
 // Click on the "Next" button after entering vitals
 		startVisit1And2StepsPage.clickOnFirstVitalsNextButton();
 		// click On confirm button
+<<<<<<< HEAD
+		startVisit1And2StepsPage.clickOnConfirmButton();
+=======
 		/// startVisit1And2StepsPage.clickOnConfirmButton();
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 // Select all reasons on the page
 
 		Assert.assertTrue(startVisit1And2StepsPage.verifyAllSelectedReasonsAreDisplayed(
@@ -410,17 +490,28 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		// Click on the "Next" button after entering vitals
 		startVisit1And2StepsPage.clickOnFirstVitalsNextButton();
 		// click On confirm button
+<<<<<<< HEAD
+		startVisit1And2StepsPage.clickOnConfirmButton();
+=======
 		/// startVisit1And2StepsPage.clickOnConfirmButton();
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 		// Select visit reason as Abdominal Pain
 		startVisit1And2StepsPage.selectVisitReasonAsAbdominalPain();
 		// click On back button
 		startVisit1And2StepsPage.clickOnBackButton();
 		// Verify VitalssummaryScreen Is displayed
 
+<<<<<<< HEAD
+		Assert.assertTrue(startVisit1And2StepsPage.verifyVitailsSummaryScreenIsDisplayed());
+
+		Assert.assertEquals(startVisit1And2StepsPage.getVitalSummaryTitle(),
+				expectedAssertProp.getProperty("vitals.summary.screen.title"));
+=======
 		/// Assert.assertTrue(startVisit1And2StepsPage.verifyVitailsSummaryScreenIsDisplayed());
 
 ///		Assert.assertEquals(startVisit1And2StepsPage.getVitalSummaryTitle(),
 		/// expectedAssertProp.getProperty("vitals.summary.screen.title"));
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 
 	}
 
@@ -432,7 +523,11 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		// Click on the "Next" button after entering vitals
 		startVisit1And2StepsPage.clickOnFirstVitalsNextButton();
 		// click On confirm button
+<<<<<<< HEAD
+		startVisit1And2StepsPage.clickOnConfirmButton(); // 1/4
+=======
 ///		startVisit1And2StepsPage.clickOnConfirmButton(); // 1/4
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 		// Select visit reason as Abdominal Pain
 		startVisit1And2StepsPage.selectVisitReasonAsAbdominalPain();
 		// Click next button
@@ -457,7 +552,11 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		// Click on the next button after entering vitals
 		startVisit1And2StepsPage.clickOnFirstVitalsNextButton();
 		// Confirm the entered patient vitals
+<<<<<<< HEAD
+		startVisit1And2StepsPage.clickOnConfirmButton(); // 1/4
+=======
 		/// startVisit1And2StepsPage.clickOnConfirmButton(); // 1/4
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 		// Select visit reason as Abdominal Pain
 		startVisit1And2StepsPage.selectVisitReasonAsAbdominalPain();
 		// Click on the next button after selecting visit reason
@@ -481,7 +580,11 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		// Navigate to the next step in the visit process
 		startVisit1And2StepsPage.clickOnFirstVitalsNextButton();
 		// Confirm the entered patient vitals
+<<<<<<< HEAD
+		startVisit1And2StepsPage.clickOnConfirmButton(); // 1/4
+=======
 		/// startVisit1And2StepsPage.clickOnConfirmButton(); // 1/4
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 		// Select the visit reason as Abdominal Pain
 		startVisit1And2StepsPage.selectVisitReasonAsAbdominalPain();
 		// Proceed to the next step after selecting the visit reason
@@ -698,7 +801,10 @@ public class StartVisit1And2StepsTest extends BaseTest {
 
 		// Performing a scroll to the end action on the screen
 		startVisit1And2StepsPage.scrollToEndAction();
+<<<<<<< HEAD
+=======
 		Assert.assertTrue(startVisit1And2StepsPage.threeOfTwelveQuestioNotPresent());
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 
 		// startVisit1And2StepsPage.scrollUpToSkipButtonOnPainRadiatesScreen();
 		/**
@@ -741,8 +847,12 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		// Verifying the display of the second out of twelve questions
 		// Selecting the option related to pain radiating
 		startVisit1And2StepsPage.selectPainRadiatesOption();
+<<<<<<< HEAD
+
+=======
 		startVisit1And2StepsPage.scrollToEndAction();
 		Assert.assertFalse(startVisit1And2StepsPage.threeOfTwelveQuestioNotPresent());
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 		// Clicking on the submit button for the pain radiates question
 		// startVisit1And2StepsPage.clickOnPainRadiatesSubmitButton();
 
@@ -779,7 +889,11 @@ public class StartVisit1And2StepsTest extends BaseTest {
 
 	}
 
+<<<<<<< HEAD
+	@Test(priority = 24, description = "Verify selecting any one number in 3 of 12", enabled = true)
+=======
 	@Test(priority = 24, description = "Verify selecting any duration in 3 of 12", enabled = true)
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	public void IDA4_2474_selectNumberAndVerify() throws InterruptedException {
 		// Entering patient vitals details
 		startVisit1And2StepsPage.enterPatientVitals(appData);
@@ -1035,7 +1149,11 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		startVisit1And2StepsPage.verifyFiveOfTwelveQuestonIsDisplayed();
 		startVisit1And2StepsPage.selectNightOption();
 		startVisit1And2StepsPage.clickOnFiveOfTwelveQuestionsSubmitButton();
+<<<<<<< HEAD
+		// Assert.assertTrue(startVisit1And2StepsPage.verifySixOfTwelveQuestionsIsDisplayed());
+=======
 		Assert.assertTrue(startVisit1And2StepsPage.verifySixOfTwelveQuestionsIsDisplayed());
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	}
 
 	@Test(priority = 32, description = "Verify clicking on Others [Describe] section in 5 of 12", enabled = true)
@@ -1290,6 +1408,10 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		// Assert.assertTrue(startVisit1And2StepsPage.verifyEightOfTwelvequsetionsIsDisplayed());
 	}
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	@Test(priority = 39, description = "Verify whether user able to select any options in 8 of 12", enabled = true)
 	public void IDA4_2501_verifyUserAbleToSelectAnyOptionInEightOfTwelveQuestions() throws InterruptedException {
 		startVisit1And2StepsPage.enterPatientVitals(appData);
@@ -2196,8 +2318,11 @@ public class StartVisit1And2StepsTest extends BaseTest {
 	public void IDA4_2541_verifyDescribeTextAreaIsDisplayed() throws InterruptedException {
 		startVisit1And2StepsPage.enterVitalsAndCompleteVisit(appData);
 		startVisit1And2StepsPage.clickNoButtonInAssociatedSymptoms();
+<<<<<<< HEAD
+=======
 		startVisit1And2StepsPage.scrollDown();
 
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 		// Click on the seventh "Yes" button associated with a specific action
 		startVisit1And2StepsPage.clickOnSevenAssociatedSymptomYesButton();
 
@@ -2234,8 +2359,11 @@ public class StartVisit1And2StepsTest extends BaseTest {
 
 	}
 
+<<<<<<< HEAD
+=======
 	// **************************************************************??**************************************************************
 
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	@Test(priority = 56, description = "Verify on clicking submit button after selecting yes or no option for symptoms", enabled = true)
 	public void IDA4_2549_verifyAssociatedSymptomSubmitButton() throws InterruptedException {
 		startVisit1And2StepsPage.enterVitalsAndCompleteVisit(appData);
@@ -2257,14 +2385,21 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		startVisit1And2StepsPage.enterVitalsAndCompleteVisit(appData);
 		Thread.sleep(2000);
 		startVisit1And2StepsPage.clickOnSevenAssociatedSymptomYesButton();
+<<<<<<< HEAD
+		startVisit1And2StepsPage.enterDataInDescribeTextFiled("Testing");
+=======
 		startVisit1And2StepsPage.enterDataInDescribeTextField("Testing");
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 		// startVisit1And2StepsPage.scrollToEndAction();
 		for (int i = 0; i < 4; i++) {
 			scrollDown();
 		}
 		startVisit1And2StepsPage.clickOnAssociatedSymptomMainSubmitButton();
+<<<<<<< HEAD
+=======
 
 		/// Locators are not present for VisitReasonSummaryScreen
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 		startVisit1And2StepsPage.verifyVisitReasonSummaryScreenIsDisplayed();
 		startVisit1And2StepsPage.clickOnAbdominalPainChangeIcon();
 		startVisit1And2StepsPage.verifyAssociatedSymptomsTitleIsDisplayed();
@@ -2294,14 +2429,21 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		startVisit1And2StepsPage.checkSymptomsNoButton();
 		startVisit1And2StepsPage.clickOnAssociatedSymptomMainSubmitButton();
 		// startVisit1And2StepsPage.verifyVisitReasonSummaryScreenIsDisplayed();
+<<<<<<< HEAD
+=======
 
 		/// Locators are not present for VisitReasonSummaryScreen
 
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 		startVisit1And2StepsPage.clickOnBackButtonOnVisitReasonSummaryScreen();
 		Assert.assertTrue(startVisit1And2StepsPage.verifyAssociatedSymptomsTitleIsDisplayed());
 
 		Assert.assertEquals(startVisit1And2StepsPage.getAssociatedSymptomsTitle(),
+<<<<<<< HEAD
+				expectedAssertProp.getProperty("visit.reason.associated.symptoms.title"));
+=======
 				expectedAssertProp.getProperty("visit.reason.abdominal.pain.title"));
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	}
 
 	@Test(priority = 59, description = "Verify the functionality of Confirm button on 2/4 Visit Reason summary page ", enabled = true)
@@ -2316,8 +2458,11 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		startVisit1And2StepsPage.clickOnAssociatedSymptomMainSubmitButton();
 		// verify visit summary screen is displayed
 		Assert.assertTrue(startVisit1And2StepsPage.verifyVisitReasonSummaryScreenIsDisplayed());
+<<<<<<< HEAD
+=======
 
 		/// add code for click on Confirm button on 2/4 Visit Reason summary page
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	}
 
 	@Test(priority = 60, description = "Verify the functionality of Associated symptoms section on 2/4 Visit Reason summary page", enabled = true)
@@ -2327,9 +2472,13 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		startVisit1And2StepsPage.enterVitalsAndCompleteVisit(appData);
 
 		// verify the associated symptoms section
+<<<<<<< HEAD
+		startVisit1And2StepsPage.editAssociatedSymptoms();
+=======
 		startVisit1And2StepsPage.editAssociatedSymptoms();// check with @srinivas
 
 		/// Locators are not present for VisitReasonSummaryScreen
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 
 		Assert.assertTrue(startVisit1And2StepsPage.verifyAssociatedSymptomsSectionOnSummaryPage());
 
@@ -2382,7 +2531,11 @@ public class StartVisit1And2StepsTest extends BaseTest {
 		startVisit1And2StepsPage.enterPatientVitals(appData);
 
 		// select value from serach results and verify
+<<<<<<< HEAD
+		Assert.assertTrue(startVisit1And2StepsPage.selectValueFromSearchResultsAndVerify());
+=======
 		Assert.assertTrue(startVisit1And2StepsPage.selectValueFromSearchProtocolResultsAndVerify());
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	}
 
 	/**

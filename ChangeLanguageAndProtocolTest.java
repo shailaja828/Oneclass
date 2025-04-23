@@ -75,6 +75,8 @@ public class ChangeLanguageAndProtocolTest extends BaseTest {
 		changeLanguageAndProtocolPage.getchangeLanguageConfirmationDialogueLabels();
 		changeLanguageAndProtocolPage.clickOnYes();
 
+		Assert.assertEquals(changeLanguageAndProtocolPage.getLanguageChangedSuccessFullyText(),
+				expectedAssertProp.getProperty("change.language.screen.changed.successfully.message.hindi"));
 		Assert.assertEquals(changeLanguageAndProtocolPage.selectedLanguageTextInDropdown(),
 				expectedAssertProp.getProperty("change.language.hindi.text"));
 
@@ -94,6 +96,7 @@ public class ChangeLanguageAndProtocolTest extends BaseTest {
 		changeLanguageAndProtocolPage.navigateToChangeLanguageScreen();
 		changeLanguageAndProtocolPage.clickOnSync();
 		getDriver().navigate().back();
+
 		Thread.sleep(0);
 		String newSyncTime = addnewPatientPage.clickOnSync();
 
@@ -112,9 +115,10 @@ public class ChangeLanguageAndProtocolTest extends BaseTest {
 		changeLanguageAndProtocolPage.navigateToChangeLanguageScreen();
 		changeLanguageAndProtocolPage.clickOnSync();
 
+		Assert.assertEquals(changeLanguageAndProtocolPage.getLanguageChangedSuccessFullyText(),
+				expectedAssertProp.getProperty("change.language.screen.changed.successfully.message"));
 		Assert.assertEquals(changeLanguageAndProtocolPage.selectedLanguageTextInDropdown(),
 				expectedAssertProp.getProperty("change.language.english.text"));
-
 	}
 
 	/**

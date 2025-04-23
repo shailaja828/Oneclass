@@ -32,6 +32,10 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 
+/**
+ * @Epic("App Setup Module") @Feature("Introductory Screens and Language
+ * Selection") @Owner("Srinivas")
+ */
 @Epic("App Setup Module")
 @Feature("Introductory Screens and Language  Selection")
 @Owner("Srinivas Bandi")
@@ -100,6 +104,9 @@ public class AppSetupTest extends BaseTest {
 		// Verify elements on Ayu screen are displayed
 		Assert.assertTrue(appSetupPage.verifyAyuScreen());
 
+		Assert.assertEquals(appSetupPage.getPolicyTexts(),
+				Arrays.asList(expectedAssertProp.getProperty("ayu.screen.termsandconditionstext"),
+						expectedAssertProp.getProperty("ayu.screen.privacypolicytext")));
 		/**
 		 * remove list and make it as a signle string when we execute as there is a
 		 * single xpath
@@ -120,6 +127,7 @@ public class AppSetupTest extends BaseTest {
 
 		// Click on the "Skip" button to bypass initial setup
 		appSetupPage.clickOnSkipButton();
+
 		/**
 		 * Needed one attribute For status checked
 		 */
@@ -138,6 +146,7 @@ public class AppSetupTest extends BaseTest {
 						expectedAssertProp.getProperty("app.setup.screen.password")));
 
 	}
+
 /**
  * Commented this due to only one locator for terms and conditions and privacy policy.. Hence required one more locator to automate this 
  * testcase
@@ -164,6 +173,7 @@ public class AppSetupTest extends BaseTest {
 
 		// Navigate back from the Terms and Conditions screen
 		appSetupPage.clickOnTermsAndConditionsBackArrow();
+
 		/**
 		 * Needed separate element locator for terms and conditions and privacy policy
 		 */
