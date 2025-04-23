@@ -1064,5 +1064,8 @@ public class AddNewPatientPage extends BaseTest {
 	public String getUpdatedName() {
 		return updatePatientScreenTitle.getText();
 	}
+	public String getUpdatedName2() {
+		return updatePatientScreenTitle.getText();
+	}
 
 }
