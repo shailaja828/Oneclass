@@ -1,10 +1,7 @@
 package com.intelehealth.pages;
 
 import java.io.IOException;
-<<<<<<< HEAD
-=======
 import java.util.List;
->>>>>>> 4179dc4eaab4c397c63ead2179c1294ae6a508ec
 
 import org.openqa.selenium.WebElement;
 
@@ -76,7 +73,6 @@ public class FindPatientPage extends BaseTest {
 		click(lblPatientCard);
 	}
 
-
 // Method to enter a value in the search box and press Enter
 	public void enterValueInSearchBox(String txt) throws InterruptedException {
 		Thread.sleep(4000);
@@ -111,12 +107,10 @@ public class FindPatientPage extends BaseTest {
 	
 	public boolean isDisplayedSearchedPatient() {
 		return isDisplayed(automationOnePatient, "Patient is Displayed");
-			
 	}
 	
 	public void enterInvalidPatienTName(String txt) throws InterruptedException {
 		sendKeys(findPatientSearchBar, txt);
-
 	}
 
 	public void verifyInvalidPatientSearch() {

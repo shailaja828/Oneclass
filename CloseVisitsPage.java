@@ -141,14 +141,7 @@ public class CloseVisitsPage extends BaseTest {
 		isDisplayed(feedbackTitle, "Feedback Screen is displayed - Title");
 	}
 
-	/**
-	 * <<<<<<< HEAD
-	 * 
-	 * @author Srinivas =======
-	 * @author @SrinivasBandi >>>>>>> 4179dc4eaab4c397c63ead2179c1294ae6a508ec
-	 * @return String
-	 */
-
+	
 	public String getFeedbackTitle() {
 		return feedbackTitle.getText();
 	}
@@ -166,7 +159,6 @@ public class CloseVisitsPage extends BaseTest {
 	 * @throws InterruptedException
 	 */
 
-	// Enter feedback and verify the process
 	public void enterFeedbackAndverify() throws InterruptedException {
 		click(lblOpenVisits, "Clicked on 'Close Visits'");
 		// Click on Close Visits again
@@ -176,7 +168,6 @@ public class CloseVisitsPage extends BaseTest {
 		sendKeys(feedbackTextField, "Testing", "Entered feedback: 'Testing'");
 		click(submitButton, "Clicked on 'Submit' Button");
 	}
-
 	// Scroll to the 'Older Visits' section and close visits in both recent and
 
 	public WebElement scrollToOlderVisits() {

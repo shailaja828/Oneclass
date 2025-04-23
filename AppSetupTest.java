@@ -36,6 +36,9 @@ import io.qameta.allure.Story;
  * @Epic("App Setup Module") @Feature("Introductory Screens and Language
  * Selection") @Owner("Srinivas")
  */
+@Epic("App Setup Module")
+@Feature("Introductory Screens and Language  Selection")
+@Owner("Srinivas Bandi")
 public class AppSetupTest extends BaseTest {
 	TestUtils utils = new TestUtils();
 	AppSetupPage appSetupPage;
@@ -104,6 +107,13 @@ public class AppSetupTest extends BaseTest {
 		Assert.assertEquals(appSetupPage.getPolicyTexts(),
 				Arrays.asList(expectedAssertProp.getProperty("ayu.screen.termsandconditionstext"),
 						expectedAssertProp.getProperty("ayu.screen.privacypolicytext")));
+		/**
+		 * remove list and make it as a signle string when we execute as there is a
+		 * single xpath
+		 */
+		// Assert.assertEquals(appSetupPage.getPolicyTexts(),
+		// Arrays.asList(expectedAssertProp.getProperty("ayu.screen.termsandconditionstext"),
+		// expectedAssertProp.getProperty("ayu.screen.privacypolicytext")));
 
 		Assert.assertEquals(appSetupPage.getAyuScreenText(),
 				Arrays.asList(expectedAssertProp.getProperty("ayu.screen.title"),
@@ -117,6 +127,10 @@ public class AppSetupTest extends BaseTest {
 
 		// Click on the "Skip" button to bypass initial setup
 		appSetupPage.clickOnSkipButton();
+
+		/**
+		 * Needed one attribute For status checked
+		 */
 		Assert.assertFalse(appSetupPage.isEnabledSetUpButton());
 		// Click on the checkbox to agree to terms and conditions
 		appSetupPage.clickOnCheckBox();
@@ -133,7 +147,12 @@ public class AppSetupTest extends BaseTest {
 
 	}
 
-	@Test(priority = 4, description = "Verify clicking on Terms and Conditions/Privacy Policy link on the checkbox text", enabled = true)
+/**
+ * Commented this due to only one locator for terms and conditions and privacy policy.. Hence required one more locator to automate this 
+ * testcase
+ * @throws InterruptedException
+ */
+	//@Test(priority = 4, description = "Verify clicking on Terms and Conditions/Privacy Policy link on the checkbox text", enabled = true)
 	public void IDA4_1941_verifyTermsAndPrivacyPolicyScreen() throws InterruptedException {
 		ExtentReport.startTest("IDA4_1941_verifyTermsAndPrivacyPolicyScreen",
 				"Verify clicking on Terms and Conditions/Privacy Policy link on the checkbox text");
@@ -155,6 +174,9 @@ public class AppSetupTest extends BaseTest {
 		// Navigate back from the Terms and Conditions screen
 		appSetupPage.clickOnTermsAndConditionsBackArrow();
 
+		/**
+		 * Needed separate element locator for terms and conditions and privacy policy
+		 */
 		// Click on the link to view the Privacy Policy
 		appSetupPage.clickOnPrivacyPolicy();
 

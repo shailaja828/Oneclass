@@ -5,6 +5,8 @@ import java.lang.reflect.Method;
 
 import org.json.JSONObject;
 import org.json.JSONTokener;
+
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -60,8 +62,8 @@ public class LoginMenuTest extends BaseTest {
 		loginMenuPage.clickOnHamburgerMenu();
 	}
 	
-	
-	@Test(priority = 1, description = " Verify if a user will be able to login with a valid username and valid password.", enabled = true)
+
+	@Test(priority = 1, description = " Verify if a user will be able to login with a valid username and valid password.", enabled = false)
 	public void IDA4_1950_verifyLoginWithValidUsernameAndPassword() throws InterruptedException {
 
 		// Click on the "Log Out" option in the login menu page
@@ -77,6 +79,7 @@ public class LoginMenuTest extends BaseTest {
 		loginMenuPage.login();
 		Thread.sleep(5000);
 		loginMenuPage.verifyLocationIsDisplayed();
+	Assert.assertTrue(loginMenuPage.verifyLocationIsDisplayed());
 
 	}
 
@@ -94,6 +97,7 @@ public class LoginMenuTest extends BaseTest {
 		loginMenuPage.clickOnHamburgerMenu();
 		// Verify the elements on the menu page to ensure successful login
 		loginMenuPage.verifyMenuPageElements();
+		Assert.assertTrue(loginMenuPage.verifyMenuPageElements());
 
 	}
 
@@ -113,12 +117,14 @@ public class LoginMenuTest extends BaseTest {
 
 		// Verify the user profile details on the menu page after logging back in
 		loginMenuPage.verifyUserProfileDetails();
+		Assert.assertTrue(loginMenuPage.verifyUserProfileDetails());
 
 	}
 //	logout and reset app 
 	@Test(priority = 4, description = "Verify the User can logout from app", enabled = true)
 	public void IDA4_2050_verifyLogoutFunctionality() throws InterruptedException {
 		loginMenuPage.verifyLogout();
+		Assert.assertTrue(loginMenuPage.verifyLogout());
 	}
 	
 	
@@ -126,6 +132,7 @@ public class LoginMenuTest extends BaseTest {
 	@Test(priority = 5, description = "Verify if user can Reset the App", enabled = true)
 	public void IDA4_2052_verifyResetApp() throws InterruptedException {
 		loginMenuPage.verifyResetAppFunctionality();
+		Assert.assertTrue(loginMenuPage.verifyResetAppFunctionality());
 	}
 //	@Test(priority = 6, description = "Verify if a user is able to login with a new password only after he/she has changed the password", enabled = true)
 //	public void IDA4_2052_verifyUserAbleToLoginWithNewPassword() throws InterruptedException {

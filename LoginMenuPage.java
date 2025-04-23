@@ -10,11 +10,7 @@ import org.openqa.selenium.WebElement;
 import com.aventstack.extentreports.Status;
 import com.intelehealth.base.BaseTest;
 import com.intelehealth.reports.ExtentReport;
-<<<<<<< HEAD
-=======
 import com.intelehealth.utils.TestUtils;
->>>>>>> 4179dc4eaab4c397c63ead2179c1294ae6a508ec
-
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class LoginMenuPage extends BaseTest {
@@ -27,29 +23,22 @@ public class LoginMenuPage extends BaseTest {
 	private WebElement loginButton;
 	@AndroidFindBy(id = "org.intelehealth.app:id/tv_welcome_back")
 	private WebElement loginScreenWelcomeBackTitle;
-
 	@AndroidFindBy(id = "org.intelehealth.app:id/iv_hamburger")
 	private WebElement menu;
 	@AndroidFindBy(id = "org.intelehealth.app:id/tv_edit_profile")
 	private WebElement profile;
 	@AndroidFindBy(xpath = "//android.widget.CheckedTextView[@resource-id='org.intelehealth.app:id/design_menu_item_text' and @text='My Achievements']")
 	private WebElement myAchievements;
-
 	@AndroidFindBy(xpath = "//android.widget.CheckedTextView[@resource-id='org.intelehealth.app:id/design_menu_item_text' and @text='Settings']")
 	private WebElement lftPnlSettings;
-
 	@AndroidFindBy(xpath = "//android.widget.CheckedTextView[@resource-id='org.intelehealth.app:id/design_menu_item_text' and @text='Call Logs']")
 	private WebElement lftPnlcallLogs;
-
 	@AndroidFindBy(xpath = "//android.widget.CheckedTextView[@resource-id='org.intelehealth.app:id/design_menu_item_text' and @text='About us']")
 	private WebElement aboutUs;
-
 	@AndroidFindBy(xpath = "//android.widget.CheckedTextView[@resource-id='org.intelehealth.app:id/design_menu_item_text' and @text='Log-out']")
 	private WebElement logOut;
-
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Reset app']")
 	private WebElement resetApp;
-
 	@AndroidFindBy(accessibility = "Book Appointment Dialog Title TextView")
 	private WebElement logOutPopup;
 	@AndroidFindBy(id = "org.intelehealth.app:id/btn_yes_appointment")
@@ -93,9 +82,9 @@ public class LoginMenuPage extends BaseTest {
 
 		}
 	}
+
 	// Click on the hamburger menu icon
 	public void clickOnHamburgerMenu() throws InterruptedException {
-
 		click(menu);
 	}
 
@@ -180,10 +169,8 @@ public class LoginMenuPage extends BaseTest {
 	public boolean verifyLogout() throws InterruptedException {
 		// Click on the logout button
 		click(logOut, "Clicked on the Logout button");
-
 		// Click on the "Yes" button to confirm logout
 		click(yesButton, "Confirmed logout by clicking on Yes button");
-
 		// Introducing a brief delay for the UI to update (use of Thread.sleep should be
 		// minimized)
 		Thread.sleep(2000);
@@ -195,7 +182,6 @@ public class LoginMenuPage extends BaseTest {
 	public boolean verifyResetAppFunctionality() throws InterruptedException {
 		// Click on the reset app button
 		click(resetApp, "Clicked on the Reset App button");
-
 		// Click on the "Yes" button to confirm app reset
 		click(resetAppYesButton, "Confirmed app reset by clicking on Yes button");
 

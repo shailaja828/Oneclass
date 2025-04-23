@@ -28,7 +28,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	private WebElement patientName;
 	@AndroidFindBy(accessibility = "Patient Details Patient OpenMRS ID TextView")
 	private WebElement patientId;
-
 	@AndroidFindBy(id = "org.intelehealth.app:id/tv_title")
 	private WebElement visitCreatedPatientName;
 
@@ -287,11 +286,9 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Pain radiates to *']")
 	private WebElement painRadiates;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"Nested Question Item View Question TextView\"]")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Nested Question Item View Question TextView']")
 	private WebElement painRadiatesTo;
-	// android.widget.TextView[@text='Pain radiates to']
-	//// android.widget.TextView[@content-desc="Nested Question Item View Question
-	// TextView"]
+	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Right shoulder']")
 	private WebElement rightShoulder;
 
@@ -313,9 +310,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	private WebElement rightGroin;
 	@AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"Chips for Reason Item TextView\"])[19]")
 	private WebElement leftGroin;
-	// (//android.widget.TextView[@content-desc="Chips for Reason Item
-	// TextView"])[19]
-	// android.widget.TextView[@text='Left groin']
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Chest']")
 	private WebElement chest;
 	@AndroidFindBy(accessibility = "Nested Question Item View Submit Button")
@@ -324,7 +318,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	private WebElement painRadiatesSkipButton;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='3 of 12 questions']")
 	private WebElement threeOfElevenQuestions;
-
 	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='android:id/text1' and @text='2']")
 	private WebElement two;
 
@@ -370,6 +363,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 // 6 of 12 questions
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Constant']")
 	private WebElement constantOptionOfSixOfTwelveQuetions;
+
 	@AndroidFindBy(xpath = "(//android.widget.Button[@text='Submit'])[last()]")
 	private WebElement sixOfTwelveQuestionsSubmitButton;
 
@@ -378,10 +372,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='7 of 12 questions']")
 	private WebElement sevenOfTwelveQuestions;
-
-	@AndroidFindBy(xpath = "(//android.widget.TextView[@text='Other [describe]'])")
-	private WebElement othersOptionOfSixOfTwelveQuestions;
-
+	
 	@AndroidFindBy(xpath = "(//android.widget.TextView[@text='Other [describe]'])")
 	private WebElement othersOptionOfSixOfTwelveQuestions;
 // 7 of 12 questions
@@ -416,31 +407,31 @@ public class StartVisit1And2StepsPage extends BaseTest {
 // 10 of 12
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Has not started menstruation']")
 	private WebElement hasNotStartedmenstruationOption;
-
+	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='10 of 12 questions']")
 	private WebElement tenOfTwelveQusetions;
-
+	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_name' and @text='Is menstruating']")
 	private WebElement isMenstruatingOption;
-
+	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Age at onset ']")
 	private WebElement ageAtOnset;
-
+	
 	@AndroidFindBy(id = "org.intelehealth.app:id/actv_reasons")
 	private WebElement ageAtOnSetInputFiled;
-
+	
 	@AndroidFindBy(xpath = "(//android.widget.Button[@text='Submit'])[last()]")
 	private WebElement ageOnSetInputFeildSubmitButton;
-
+	
 	@AndroidFindBy(accessibility = "Visit Reason Input Text Skip Button")
 	private WebElement ageOnSetSkipButton;
-
+	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Last menstruation period']")
 	private WebElement lastMenstruationPeriod;
-
+	
 	@AndroidFindBy(id = "android:id/month_view")
 	private WebElement calender;
-
+	
 	@AndroidFindBy(xpath = "//android.view.View[@text='1']")
 	private WebElement menstruationDate;
 	@AndroidFindBy(accessibility = "Visit Reason Date Picker Selected Date TextView")
@@ -461,25 +452,25 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	private WebElement twelveOfTwelveSkipButton;
 	@AndroidFindBy(xpath = "//android.widget.Button[@content-desc='Visit Reason Input Text Submit Button']")
 	private WebElement twelveOfTwelveSubmitButton;
-
+//Associated symptoms
 	@AndroidFindBy(id = "org.intelehealth.app:id/tv_sub_title")
 	private WebElement associatedSymptomsTitle;
-
+	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Do you have the following symptom(s)?*']")
 	private WebElement doYouHaveFollowingSymptom;
-
+	
 	@AndroidFindBy(xpath = "(//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_yes'])[6]")
 	private WebElement changeInApetiteYesButton;
-
+	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='1 of 1 questions']")
 	private WebElement oneOfOneQuestions;
+	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='What is the change?']")
 	private WebElement whatIsTheChange;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Increased']")
 	private WebElement increased;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Decreased']")
 	private WebElement decreased;
-
 	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_question' and @text='7. Change in frequency of urination [describe]']/following-sibling::android.widget.LinearLayout//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_yes']")
 	private WebElement sevenYesButton;
 	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_question' and @text='8. Color change in stool [describe]']/following-sibling::android.widget.LinearLayout//android.widget.TextView[@resource-id='org.intelehealth.app:id/tv_yes']")
@@ -731,8 +722,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 				enterthePatientsVitalsLabel, lblHeight, lblWeight, lblBMIIndex, lblBPSystolic, lblBPDiastolic, lblPulse,
 				lblTemperature, lblSpO2);
 		scrollDown();
-
-		// scrollDown("Respiratory Rate (breaths/min)");
+		//scrollDown("Respiratory Rate (breaths/min)");
 		elementsText.addAll(getElementsText(lblRespiratoryRate, lblBloodGroup));
 		return elementsText;
 	}
@@ -813,7 +803,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		double calculatedBMI = calculateBMI(weightKg, heightCm);
 		Thread.sleep(1000);
 		if (calculatedBMI < 18.5) {
-
 			return actualBMIStatus.equalsIgnoreCase(ExpectedStatus.get(0));
 		} else if (calculatedBMI > 18.5 && calculatedBMI < 24.9) {
 			return actualBMIStatus.equalsIgnoreCase(ExpectedStatus.get(1));
@@ -829,6 +818,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 
 		} else if (calculatedBMI > 40.0) {
 			return actualBMIStatus.equalsIgnoreCase(ExpectedStatus.get(5));
+
 		}
 
 		return false;
@@ -1130,15 +1120,17 @@ public class StartVisit1And2StepsPage extends BaseTest {
 
 		// Scroll to view the respiratory rate field
 		scrollDown();
+
 		// Enter the provided spo2 (oxygen saturation) level
 		sendKeys(spo2EditText, spo2);
 
 		// Enter the provided respiratory rate
 		sendKeys(respiratoryRateEditText, respiratoryRate);
-
+		
 		click(drpBloodGroup, "clicked on bloodGroup dropdown");
 
 		click(selectDrpBloodGroup, "clicked on bloodGroup dropdown");
+
 	}
 
 	public List<String> verifyPatientVitalsDetails() throws InterruptedException {
@@ -1399,6 +1391,8 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		click(visitReasonAbdominalPain);
 		scrollToDiarreha();
 		click(diarrhea);
+		// scrollToFever();
+		// click(fever);
 		scrollToHyperTension();
 		click(hypertension);
 		scrollToWhatIsTheReasonForVisit();
@@ -1572,7 +1566,9 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
+
 		}
+
 		two.isDisplayed();
 	}
 
@@ -1608,6 +1604,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
+
 		}
 
 		click(gradualOption);
@@ -1617,6 +1614,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
+
 		}
 
 		return isDisplayed(fiveOfTwelveQuestions);
@@ -1626,6 +1624,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
+
 		}
 
 		click(othersOptionOfFourOfTwelveQuestions);
@@ -1666,6 +1665,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
+
 		}
 
 		click(night);
@@ -1676,6 +1676,8 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	}
 
 	public boolean verifySixOfTwelveQuestionsIsDisplayed() throws InterruptedException {
+		// click(othersOptionOfFiveOfTwelveQuestions);
+		// sendKeys(describeTextField, "sri_test");
 		try {
 
 			return isDisplayed(sixOfTwelveQuestions);
@@ -1712,6 +1714,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
+
 		}
 
 		click(mildOneThreeOption);
@@ -1730,6 +1733,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
+
 		}
 
 		click(coughingOption);
@@ -1743,6 +1747,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
+
 		}
 
 		return isDisplayed(nineOfTwelveQuestions);
@@ -1752,6 +1757,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
+
 		}
 
 		click(otherOptionOfEightOfTwelveQuestions);
@@ -1784,6 +1790,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
+
 		}
 
 		click(hasNotStartedmenstruationOption);
@@ -1799,6 +1806,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
+
 		}
 
 		isDisplayed(ageAtOnset);
@@ -1809,6 +1817,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
+
 		}
 
 		sendKeys(ageAtOnSetInputFiled, txt);
@@ -2022,6 +2031,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 	}
 
 	public void clickOnAssociatedSymptomMainSubmitButton() throws InterruptedException {
+		// scrollToEndAction();
 		click(associatedSymptomSubmitButton);
 	}
 
@@ -2044,6 +2054,12 @@ public class StartVisit1And2StepsPage extends BaseTest {
 
 		}
 		scrollToElementUsingItsText("What worsens the pain?*");
+		// return getDriver().findElement(
+		// AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()" +
+		// ".scrollable(true)).scrollIntoView("
+		// + "new UiSelector().description(\"//android.widget.TextView[@text='8 of 12
+		// questions']\"));"));
+
 	}
 
 	/**
@@ -2198,9 +2214,12 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		clickOnTwelevOfTwelveSkipButton();
 	}
 
-	public void enterVitalsAndCompleteVisit(JSONObject appData) throws InterruptedException {
+	public void enterVitalsDetailsAndCompleteTenQuestions(String height, String weight, String bpSystolicValue,
+			String bpDiastolicValue, String pulse, String temperature, String spo2, String respiratoryRate)
+			throws InterruptedException {
 		// Enter patient vitals details
-		enterPatientVitals(appData);
+		enterPatientVitalsDetails(height, weight, bpSystolicValue, bpDiastolicValue, pulse, temperature, spo2,
+				respiratoryRate);
 
 		// Navigate to the next screen after entering vitals
 		clickOnFirstVitalsNextButton();
@@ -2225,12 +2244,10 @@ public class StartVisit1And2StepsPage extends BaseTest {
 
 		// Answer additional questions related to abdominal pain
 		// verifyTwoOfTwelveQuestionIsDisplayed();
-		/*
-		 * selectPainRadiatesOption(); clickOnGroin();
-		 * clickOnPainRadiatesSubmitButton();
-		 */
+		// selectPainRadiatesOption();
+		// clickOnGroin();
+		// clickOnPainRadiatesSubmitButton();
 		clickOnDoesNotMoveOption();
-
 		// Answer more questions related to abdominal pain
 		// verifyThreeOfTweleveQuestionsIsDisplayed();
 		clickOnNumberSpinner();
@@ -2249,6 +2266,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		// verifyFiveOfTwelveQuestonIsDisplayed();
 		selectNightOption();
 		clickOnSubmitButtonOfSixOfTwelveQusetions();
+
 		// Answer additional questions related to abdominal pain
 		// verifySixOfTwelveQuestionsIsDisplayed();
 		clickOnConstantOptionOfSixOfTweleveQuestions();
@@ -2272,11 +2290,6 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		// verifyTenOfTwelveQuestionsIsDisplayed();
 		selectHasNotStartedMenstruationOption();
 		// verifyElevenOfTwelveQuestionsIsDisplayed();
-		selectNoneOption();
-		// verifyTwelveOfTwelveQuestionsIsDisplayed();
-
-		// Skip the last question
-		clickOnTwelevOfTwelveSkipButton();
 	}
 
 	public void verifyUserAllowedToSelectOneOptionInTenOfTwelveQuestion() throws InterruptedException {
@@ -2426,6 +2439,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		return true && isDisplayedAssociatedSymptomsTitle;
 	}
 
+//method selects all twenty options for associated symptoms
 	public boolean selectValueFromSearchProtocolResultsAndVerify() throws InterruptedException {
 		// Navigate to the next screen after entering vitals
 		clickOnFirstVitalsNextButton();
@@ -2439,6 +2453,7 @@ public class StartVisit1And2StepsPage extends BaseTest {
 		executeCommand(adbCommand);
 		((PressesKey) getDriver()).pressKey(new KeyEvent(AndroidKey.TAB));
 		selectVisitReasonAsAbdominalPain();
+
 		// click(selectedReasonLabel);
 		return isDisplayed(selectedReason, "Selected Resaon is Displayed")
 				&& isDisplayed(chipReason, "Chip reason is Displayed");

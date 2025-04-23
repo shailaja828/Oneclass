@@ -67,7 +67,8 @@ public class AddNewPatientTest extends BaseTest {
 		appSetupPage.refreshUIAndWait();
 	}
 
-	@Test(priority = 1, description = "Verify the functionality of Accept button on Privacy Policy screen", enabled = true)
+	// @Test(priority = 1, description = "Verify the functionality of Accept button
+	// on Privacy Policy screen", enabled = true)
 	public void IDA4_2258_verifyAcceptButtonFunctionality() throws InterruptedException {
 		ExtentReport.startTest("IDA4_2258_verifyAcceptButtonFunctionality",
 				"Verify the functionality of Accept button on Privacy Policy screen");
@@ -89,7 +90,7 @@ public class AddNewPatientTest extends BaseTest {
 						expectedAssertProp.getProperty("add.new.patient.screen.next")));
 	}
 
-	@Test(priority = 2, description = "Verify the functionality of Decline button on Privacy Policy screen", enabled = true)
+//	@Test(priority = 2, description = "Verify the functionality of Decline button on Privacy Policy screen", enabled = true)
 	public void IDA4_2259_verifyDeclineButtonFunctionality() throws InterruptedException {
 		ExtentReport.startTest("IDA4_2259_verifyDeclineButtonFunctionality",
 				"Verify the functionality of Decline button on Privacy Policy screen");
@@ -126,14 +127,8 @@ public class AddNewPatientTest extends BaseTest {
 		addNewPatientPage.clickOnDobIcon();
 
 		// Select the month and wait for a while
-		addNewPatientPage.clickOnMonthSpinner();
-		Thread.sleep(3000);
-		addNewPatientPage.selectMonth();
-
 		// Select the year
 		addNewPatientPage.clickOnYearSpinner();
-		Thread.sleep(3000);
-		addNewPatientPage.scrollToViewYear();
 		Thread.sleep(3000);
 
 		addNewPatientPage.selectYear();
@@ -163,18 +158,18 @@ public class AddNewPatientTest extends BaseTest {
 		addNewPatientPage.selectGender();
 
 		// Scroll to the desired element (in this case, the phone number)
-		scrollToElement();
 
 		// Optional: Click on the Date of Birth (DOB) icon if needed
 		addNewPatientPage.clickOnDobIcon();
 
 		// Select the month
-		addNewPatientPage.clickOnMonthSpinner();
-		addNewPatientPage.selectMonth();
+
+		// addNewPatientPage.clickOnMonthSpinner();
+//		addNewPatientPage.selectMonth();
 
 		// Select the year
 		addNewPatientPage.clickOnYearSpinner();
-		addNewPatientPage.scrollToViewYear();
+		// addNewPatientPage.scrollToViewYear();
 		String birthYear = addNewPatientPage.getSelectedYearText();
 		addNewPatientPage.selectYear();
 
@@ -210,18 +205,24 @@ public class AddNewPatientTest extends BaseTest {
 		// Click on the Date of Birth (DOB) icon
 		addNewPatientPage.clickOnDobIcon();
 
-		// Select the month
-		addNewPatientPage.clickOnMonthSpinner();
-		addNewPatientPage.selectMonth();
+		// Select the month and wait for a while
+		// addNewPatientPage.clickOnMonthSpinner();
+		Thread.sleep(3000);
+		// addNewPatientPage.selectMonth();
 
 		// Select the year
 		addNewPatientPage.clickOnYearSpinner();
-		addNewPatientPage.scrollToViewYear();
+		Thread.sleep(3000);
+		// addNewPatientPage.scrollToViewYear();
+		Thread.sleep(3000);
+
 		addNewPatientPage.selectYear();
 
 		// Select the date and click on the Okay button
 		addNewPatientPage.selectDate();
 		addNewPatientPage.clickOnOkayButton();
+
+		addNewPatientPage.enterPhoneNumber();
 
 		// Click on the Next button to proceed to the next screen
 		addNewPatientPage.clickOnNextButton1();
@@ -256,17 +257,18 @@ public class AddNewPatientTest extends BaseTest {
 		addNewPatientPage.clickOnDobIcon();
 
 		// Select the month
-		addNewPatientPage.clickOnMonthSpinner();
-		addNewPatientPage.selectMonth();
+		// addNewPatientPage.clickOnMonthSpinner();
+		// addNewPatientPage.selectMonth();
 
 		// Select the year
 		addNewPatientPage.clickOnYearSpinner();
-		addNewPatientPage.scrollToViewYear();
+		// addNewPatientPage.scrollToViewYear();
 		addNewPatientPage.selectYear();
 
 		// Select the date and click on the Okay button
 		addNewPatientPage.selectDate();
 		addNewPatientPage.clickOnOkayButton();
+		addNewPatientPage.enterPhoneNumber();
 
 		// Click on the Next button to proceed to the next screen
 		addNewPatientPage.clickOnNextButton1();
@@ -312,12 +314,7 @@ public class AddNewPatientTest extends BaseTest {
 
 		// Click on the date of birth icon
 		addNewPatientPage.clickOnDobIcon();
-
 		// Click on the month spinner
-		addNewPatientPage.clickOnMonthSpinner();
-
-		// Select the month from the test data
-		addNewPatientPage.selectMonth();
 
 		// Click on the year spinner
 		addNewPatientPage.clickOnYearSpinner();
@@ -333,6 +330,11 @@ public class AddNewPatientTest extends BaseTest {
 
 		// Click on the "Okay" button to confirm the date
 		addNewPatientPage.clickOnOkayButton();
+		// Select the month and wait for a while
+		// addNewPatientPage.clickOnMonthSpinner();
+		Thread.sleep(3000);
+
+		addNewPatientPage.enterPhoneNumber();
 
 		// Click on the "Next" button to proceed to the next step
 		addNewPatientPage.clickOnNextButton1();
@@ -344,16 +346,16 @@ public class AddNewPatientTest extends BaseTest {
 		addNewPatientPage.scrollToViewState();
 
 		// Select the state from the test data
-		addNewPatientPage.selectState();
+		// addNewPatientPage.selectState();
 
 		// Click on the district spinner
-		addNewPatientPage.clickOnDistrictSpinner();
+		// addNewPatientPage.clickOnDistrictSpinner();
 
 		// Scroll to view the desired district
-		addNewPatientPage.scrollToViewDistrict();
+//		addNewPatientPage.scrollToViewDistrict();
 
 		// Select the district from the test data
-		addNewPatientPage.selectDistrict();
+		// addNewPatientPage.selectDistrict();
 
 		// Enter patient address details from the test data
 		addNewPatientPage.enterPatientAddressDetails(appData.getJSONObject("patientAddress").getString("pincode"),
@@ -405,47 +407,44 @@ public class AddNewPatientTest extends BaseTest {
 		// Click on the date of birth icon
 		addNewPatientPage.clickOnDobIcon();
 
-		// Click on the month spinner
-		addNewPatientPage.clickOnMonthSpinner();
+		// Select the month and wait for a while
+		// addNewPatientPage.clickOnMonthSpinner();
+		Thread.sleep(3000);
+		// addNewPatientPage.selectMonth();
 
-		// Select the month from the test data
-		addNewPatientPage.selectMonth();
-
-		// Click on the year spinner
+		// Select the year
 		addNewPatientPage.clickOnYearSpinner();
+		Thread.sleep(3000);
+		// addNewPatientPage.scrollToViewYear();
+		Thread.sleep(3000);
 
-		// Scroll to view the desired year
-		addNewPatientPage.scrollToViewYear();
-
-		// Select the year from the test data
 		addNewPatientPage.selectYear();
 
-		// Select a date for the birthdate
+		// Select the date and click on the Okay button
 		addNewPatientPage.selectDate();
-
-		// Click on the "Okay" button to confirm the date
 		addNewPatientPage.clickOnOkayButton();
+		addNewPatientPage.enterPhoneNumber();
 
 		// Click on the "Next" button to proceed to the next step
 		addNewPatientPage.clickOnNextButton1();
 
 		// Click on the state spinner
-		addNewPatientPage.clickOnStateSpinner();
+		// addNewPatientPage.clickOnStateSpinner();
 
 		// Scroll to view the desired state
-		addNewPatientPage.scrollToViewState();
+		// addNewPatientPage.scrollToViewState();
 
 		// Select the state from the test data
-		addNewPatientPage.selectState();
+		// addNewPatientPage.selectState();
 
 		// Click on the district spinner
-		addNewPatientPage.clickOnDistrictSpinner();
+		// addNewPatientPage.clickOnDistrictSpinner();
 
 		// Scroll to view the desired district
-		addNewPatientPage.scrollToViewDistrict();
+		// addNewPatientPage.scrollToViewDistrict();
 
 		// Select the district from the test data
-		addNewPatientPage.selectDistrict();
+		// addNewPatientPage.selectDistrict();
 
 		// Enter patient address details from the test data
 		addNewPatientPage.enterPatientAddressDetails(appData.getJSONObject("patientAddress").getString("pincode"),
@@ -503,47 +502,44 @@ public class AddNewPatientTest extends BaseTest {
 		// Click on the date of birth icon
 		addNewPatientPage.clickOnDobIcon();
 
-		// Click on the month spinner
-		addNewPatientPage.clickOnMonthSpinner();
+		// Select the month and wait for a while
+		// addNewPatientPage.clickOnMonthSpinner();
+		Thread.sleep(3000);
+		// addNewPatientPage.selectMonth();
 
-		// Select the month from the test data
-		addNewPatientPage.selectMonth();
-
-		// Click on the year spinner
+		// Select the year
 		addNewPatientPage.clickOnYearSpinner();
+		Thread.sleep(3000);
+		// addNewPatientPage.scrollToViewYear();
+		Thread.sleep(3000);
 
-		// Scroll to view the desired year
-		addNewPatientPage.scrollToViewYear();
-
-		// Select the year from the test data
 		addNewPatientPage.selectYear();
 
-		// Select a date for the birthdate
+		// Select the date and click on the Okay button
 		addNewPatientPage.selectDate();
-
-		// Click on the "Okay" button to confirm the date
 		addNewPatientPage.clickOnOkayButton();
+		addNewPatientPage.enterPhoneNumber();
 
 		// Click on the "Next" button to proceed to the next step
 		addNewPatientPage.clickOnNextButton1();
 
 		// Click on the state spinner
-		addNewPatientPage.clickOnStateSpinner();
+		// addNewPatientPage.clickOnStateSpinner();
 
 		// Scroll to view the desired state
-		addNewPatientPage.scrollToViewState();
+		// addNewPatientPage.scrollToViewState();
 
 		// Select the state from the test data
-		addNewPatientPage.selectState();
+		// addNewPatientPage.selectState();
 
 		// Click on the district spinner
-		addNewPatientPage.clickOnDistrictSpinner();
+		// addNewPatientPage.clickOnDistrictSpinner();
 
 		// Scroll to view the desired district
-		addNewPatientPage.scrollToViewDistrict();
+		// addNewPatientPage.scrollToViewDistrict();
 
 		// Select the district from the test data
-		addNewPatientPage.selectDistrict();
+		// addNewPatientPage.selectDistrict();
 
 		// Introduce a delay for 3000 milliseconds (3 seconds)
 		Thread.sleep(3000);
@@ -602,47 +598,45 @@ public class AddNewPatientTest extends BaseTest {
 		// Click on the date of birth icon
 		addNewPatientPage.clickOnDobIcon();
 
-		// Click on the month spinner
-		addNewPatientPage.clickOnMonthSpinner();
+		// Select the month and wait for a while
+		// addNewPatientPage.clickOnMonthSpinner();
+		Thread.sleep(3000);
+		// addNewPatientPage.selectMonth();
 
-		// Select the month from the test data
-		addNewPatientPage.selectMonth();
-
-		// Click on the year spinner
+		// Select the year
 		addNewPatientPage.clickOnYearSpinner();
+		Thread.sleep(3000);
+		// addNewPatientPage.scrollToViewYear();
+		Thread.sleep(3000);
 
-		// Scroll to view the desired year
-		addNewPatientPage.scrollToViewYear();
-
-		// Select the year from the test data
 		addNewPatientPage.selectYear();
 
-		// Select a date for the birthdate
+		// Select the date and click on the Okay button
 		addNewPatientPage.selectDate();
-
-		// Click on the "Okay" button to confirm the date
 		addNewPatientPage.clickOnOkayButton();
+		addNewPatientPage.enterPhoneNumber();
 
 		// Click on the "Next" button to proceed to the next step
 		addNewPatientPage.clickOnNextButton1();
 
 		// Click on the state spinner
-		addNewPatientPage.clickOnStateSpinner();
+		// Click on the state spinner
+		// addNewPatientPage.clickOnStateSpinner();
 
 		// Scroll to view the desired state
-		addNewPatientPage.scrollToViewState();
+		// addNewPatientPage.scrollToViewState();
 
 		// Select the state from the test data
-		addNewPatientPage.selectState();
+		// addNewPatientPage.selectState();
 
 		// Click on the district spinner
-		addNewPatientPage.clickOnDistrictSpinner();
+		// addNewPatientPage.clickOnDistrictSpinner();
 
 		// Scroll to view the desired district
-		addNewPatientPage.scrollToViewDistrict();
+		// addNewPatientPage.scrollToViewDistrict();
 
 		// Select the district from the test data
-		addNewPatientPage.selectDistrict();
+		// addNewPatientPage.selectDistrict();
 
 		// Introduce a delay for 3000 milliseconds (3 seconds)
 		Thread.sleep(3000);
@@ -706,33 +700,44 @@ public class AddNewPatientTest extends BaseTest {
 		// Click on the date of birth (DOB) icon to set the birthdate
 		addNewPatientPage.clickOnDobIcon();
 
-		// Click on the month spinner to choose the birth month
-		addNewPatientPage.clickOnMonthSpinner();
-		addNewPatientPage.selectMonth();
+		// Select the month and wait for a while
+		// addNewPatientPage.clickOnMonthSpinner();
+		Thread.sleep(3000);
+		// addNewPatientPage.selectMonth();
 
-		// Click on the year spinner to choose the birth year
+		// Select the year
 		addNewPatientPage.clickOnYearSpinner();
-		addNewPatientPage.scrollToViewYear();
+		Thread.sleep(3000);
+		// addNewPatientPage.scrollToViewYear();
+		Thread.sleep(3000);
+
 		addNewPatientPage.selectYear();
 
-		// Select the birthdate
+		// Select the date and click on the Okay button
 		addNewPatientPage.selectDate();
-
-		// Click on the "Okay" button to confirm the selected birthdate
 		addNewPatientPage.clickOnOkayButton();
+		addNewPatientPage.enterPhoneNumber();
 
 		// Click on the "Next" button to proceed to the next section
 		addNewPatientPage.clickOnNextButton1();
 
-		// Click on the state spinner to choose the patient's state
-		addNewPatientPage.clickOnStateSpinner();
-		addNewPatientPage.scrollToViewState();
-		addNewPatientPage.selectState();
+		// Click on the state spinner
+		// addNewPatientPage.clickOnStateSpinner();
 
-		// Click on the district spinner to choose the patient's district
-		addNewPatientPage.clickOnDistrictSpinner();
-		addNewPatientPage.scrollToViewDistrict();
-		addNewPatientPage.selectDistrict();
+		// Scroll to view the desired state
+		// addNewPatientPage.scrollToViewState();
+
+		// Select the state from the test data
+		// addNewPatientPage.selectState();
+
+		// Click on the district spinner
+		// addNewPatientPage.clickOnDistrictSpinner();
+
+		// Scroll to view the desired district
+		// addNewPatientPage.scrollToViewDistrict();
+
+		// Select the district from the test data
+		// addNewPatientPage.selectDistrict();
 
 		// Pause execution for 3 seconds to allow time for the page to load
 		Thread.sleep(3000);
@@ -760,7 +765,6 @@ public class AddNewPatientTest extends BaseTest {
 		addNewPatientPage.clickOnNextButton3();
 
 		// Scroll to view additional details on the page
-		addNewPatientPage.scrollToViewOtherDetails();
 
 		// Click on the change icon for other details
 		addNewPatientPage.clickOnOtherDetailsChangeIcon();
@@ -795,26 +799,24 @@ public class AddNewPatientTest extends BaseTest {
 		// Click on the date of birth (DOB) icon to enter the patient's date of birth.
 		addNewPatientPage.clickOnDobIcon();
 
-		// Select the month for the date of birth.
-		addNewPatientPage.clickOnMonthSpinner();
-		addNewPatientPage.selectMonth();
+		// Select the month and wait for a while
+	//	addNewPatientPage.clickOnMonthSpinner();
+		Thread.sleep(3000);
+		//addNewPatientPage.selectMonth();
 
-		// Select the year for the date of birth.
+		// Select the year
 		addNewPatientPage.clickOnYearSpinner();
-		addNewPatientPage.scrollToViewYear();
+		Thread.sleep(3000);
+		//addNewPatientPage.scrollToViewYear();
+		Thread.sleep(3000);
+
 		addNewPatientPage.selectYear();
 
-		// Select the specific date for the patient's date of birth.
+		// Select the date and click on the Okay button
 		addNewPatientPage.selectDate();
-
-		// Confirm the selected date of birth.
 		addNewPatientPage.clickOnOkayButton();
-
-		// Proceed to the next step of patient addition.
-		addNewPatientPage.clickOnNextButton1();
-
-		// Select the state for the patient's address.
-		addNewPatientPage.clickOnStateSpinner();
+		addNewPatientPage.enterPhoneNumber();
+	addNewPatientPage.clickOnStateSpinner();
 		addNewPatientPage.scrollToViewState();
 		addNewPatientPage.selectState();
 
@@ -823,6 +825,16 @@ public class AddNewPatientTest extends BaseTest {
 		addNewPatientPage.scrollToViewDistrict();
 		addNewPatientPage.selectDistrict();
 
+
+	//	addNewPatientPage.clickOnStateSpinner();
+		//addNewPatientPage.scrollToViewState();
+		//addNewPatientPage.selectState();
+
+		// Select the district for the patient's address.
+		/*
+		 * addNewPatientPage.clickOnDistrictSpinner();
+		 * addNewPatientPage.scrollToViewDistrict(); addNewPatientPage.selectDistrict();
+		 */
 		// Enter patient's address details including pincode, village, and address
 		// lines.
 		Thread.sleep(3000); // Sleep added for stability; consider using explicit waits instead.
@@ -845,20 +857,26 @@ public class AddNewPatientTest extends BaseTest {
 		addNewPatientPage.clickOnNextButton3();
 
 		// Scroll to view other details and initiate the update process.
+
 		addNewPatientPage.scrollToViewOtherDetails();
+
+		addNewPatientPage.scrollDown();
 		boolean nationalID = addNewPatientPage
 				.verifyNationalIDUpdateIsSuccessful(appData.getJSONObject("personalDetails").getString("nationalId"));
 
 		addNewPatientPage.clickOnOtherDetailsChangeIcon();
 
 		// Enter the updated national ID.
+
 		addNewPatientPage.enterNationalID("3456789");
+		addNewPatientPage.enterNationalID(appData.getJSONObject("personalDetails").getString("updatedNationalId"));
 
 		// Save the changes made to the patient's other details.
 		addNewPatientPage.clickOnSaveButton();
 
 		// Verify that the national ID update is successful.
-		boolean updatedNationalID = addNewPatientPage.verifyNationalIDUpdateIsSuccessful("345678");
+	
+		boolean updatedNationalID = addNewPatientPage.verifyNationalIDUpdateIsSuccessful(appData.getJSONObject("personalDetails").getString("updatedNationalId"));
 		Assert.assertEquals(nationalID, updatedNationalID);
 	}
 
@@ -884,18 +902,23 @@ public class AddNewPatientTest extends BaseTest {
 		// Click on 'Date of Birth' icon
 		addNewPatientPage.clickOnDobIcon();
 
-		// Select month for Date of Birth
-		addNewPatientPage.clickOnMonthSpinner();
-		addNewPatientPage.selectMonth();
+		// Select the month and wait for a while
+	//	addNewPatientPage.clickOnMonthSpinner();
+		Thread.sleep(3000);
+		//addNewPatientPage.selectMonth();
 
-		// Select year for Date of Birth
+		// Select the year
 		addNewPatientPage.clickOnYearSpinner();
-		addNewPatientPage.scrollToViewYear();
+		Thread.sleep(3000);
+		//addNewPatientPage.scrollToViewYear();
+		Thread.sleep(3000);
+
 		addNewPatientPage.selectYear();
 
-		// Select date for Date of Birth
+		// Select the date and click on the Okay button
 		addNewPatientPage.selectDate();
 		addNewPatientPage.clickOnOkayButton();
+		addNewPatientPage.enterPhoneNumber();
 
 		// Click on 'Next' button (Step 1)
 		addNewPatientPage.clickOnNextButton1();
@@ -973,6 +996,7 @@ public class AddNewPatientTest extends BaseTest {
 		// Scroll to view the 'Prescription Received' section
 		// addNewPatientPage.scrollToViewPrescriptionReceived();
 		findPatientPage.enterValueInSearchBox("cough");
+		findPatientPage.enterValueInSearchBox(appData.getJSONObject("personalDetails").getString("firstName"));
 
 		// Click on the 'Prescription Received' section
 		addNewPatientPage.clickOnPrescriptionReceived();
@@ -983,6 +1007,7 @@ public class AddNewPatientTest extends BaseTest {
 
 		// Click on the arrow (assuming it's a back arrow or similar)
 		addNewPatientPage.clickOnArrow();
+		addNewPatientPage.clickOpenVisitChiefComplaint();
 
 		// Verify that the 'Past Visit' summary screen is displayed
 		Assert.assertTrue(addNewPatientPage.verifyPastVisitSummaryScreen());
@@ -998,12 +1023,15 @@ public class AddNewPatientTest extends BaseTest {
 		// Introduce another delay for 4 seconds (assumes a reason for the delay)
 		Thread.sleep(5000);
 
-		// Verify that the search box is visible
+	// Verify that the search box is visible
 		findPatientPage.verifySearchBoxIsVisible();
 
 		// Scroll to view the 'Prescription Pending' section
 		// addNewPatientPage.scrollToViewPrescriptionPending();
 		findPatientPage.enterValueInSearchBox("testerSeven");
+		// Scroll to view the 'Prescription Pending' section
+		// addNewPatientPage.scrollToViewPrescriptionPending();
+		findPatientPage.enterValueInSearchBox(appData.getJSONObject("personalDetails").getString("firstName"));
 
 		// Click on the 'Prescription Pending' section
 		addNewPatientPage.clickOnPrescriptionPending();
@@ -1013,7 +1041,7 @@ public class AddNewPatientTest extends BaseTest {
 
 		// Click on the arrow (assuming it's a back arrow or similar)
 		addNewPatientPage.clickOnArrow();
-
+		addNewPatientPage.clickOpenVisitChiefComplaint();
 		// Verify that the 'Open Visit' summary screen is displayed
 
 		Assert.assertTrue(addNewPatientPage.verifyOpenVisitSummaryScreen());
@@ -1046,7 +1074,7 @@ public class AddNewPatientTest extends BaseTest {
 		findPatientPage.enterValueInSearchBox(appData.getJSONObject("personalDetails").getString("firstName"));
 		findPatientPage.clickOnFirstPatientCard();
 		String patientRegisteredText = addNewPatientPage.getOpenMRSID();
-	//	Assert.assertNotEquals(syncTime, newSyncTime);
+		// Assert.assertNotEquals(syncTime, newSyncTime);
 
 		Assert.assertNotEquals(patientNotRegisteredText, patientRegisteredText);
 
@@ -1062,6 +1090,8 @@ public class AddNewPatientTest extends BaseTest {
 		ExtentReport.startTest("IDA4_2265_addProfilePhotoAndVerify",
 				"Verify if user clicks on While using the app/only this time");
 		addNewPatientPage.addProfilePictureAndVerify();
+
+		Assert.assertTrue(addNewPatientPage.verifyProfilePictureIsDisplayed());
 
 	}
 

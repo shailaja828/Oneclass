@@ -15,7 +15,10 @@ import org.testng.annotations.Test;
 import com.intelehealth.base.BaseTest;
 import com.intelehealth.pages.AppSetupPage;
 import com.intelehealth.pages.CloseVisitsPage;
+<<<<<<< HEAD
 import com.intelehealth.pages.FindPatientPage;
+=======
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 import com.intelehealth.reports.ExtentReport;
 import com.intelehealth.utils.TestUtils;
 
@@ -99,11 +102,19 @@ public class CloseVisitsTest extends BaseTest {
 	}
 
 	/**
+<<<<<<< HEAD
 	 *after start visit
 	 * 
 	 * @throws InterruptedException
 	 */
 	@Test(priority = 5, description = "Verify the functionality of Recent Visits section", enabled = false)
+=======
+	 * after start visit
+	 * 
+	 * @throws InterruptedException
+	 */
+	@Test(priority = 5, description = "Verify the functionality of Recent Visits section", enabled = true)
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	public void IDA4_2236_verifyRecentVisitsSection() throws InterruptedException {
 		ExtentReport.startTest("IDA4_2236_verifyRecentVisitsSection",
 				"Verify the functionality of Recent Visits section");
@@ -134,18 +145,32 @@ public class CloseVisitsTest extends BaseTest {
 		Assert.assertTrue(closeVisitsPage.checkAllElementsForOldDates());
 	}
 
+<<<<<<< HEAD
 	/** 
+=======
+	/**
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	 * 
 	 * need to check after completion of start visit
 	 * 
 	 */
+<<<<<<< HEAD
 	@Test(priority = 8, description = "Verify whether last 7 days visited Patient's are only reflecting under Recent Visits section", enabled = false)
+=======
+	@Test(priority = 8, description = "Verify whether last 7 days visited Patient's are only reflecting under Recent Visits section", enabled = true)
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4
 	public void IDA4_2237_verifyAboveLastSevenDaysPatientsAreDisplayedInRecentVisits() throws InterruptedException {
 		ExtentReport.startTest("IDA4_2237_verifyAboveLastSevenDaysPatientsAreDisplayedInRecentVisits",
 				"Verify whether last 7 days visited Patient's are only reflecting under Recent Visits section");
 
 		closeVisitsPage.verifyLastSevenDaysPatientsAreDisplayed();
+<<<<<<< HEAD
 		
 		
 	}
 }
+=======
+
+	}
+}
+>>>>>>> 78774785ea5d941e4b5c808b614e8eaef7ca43d4

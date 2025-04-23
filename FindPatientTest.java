@@ -3,10 +3,13 @@ package com.intelehealth.tests;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -62,6 +65,9 @@ public class FindPatientTest extends BaseTest {
 		findPatientPage.enterValueInSearchBox(appData.getJSONObject("validPatient").getString("patientName"));
 		// Enter valid patient name and verify the search result
 		findPatientPage.verifySearchedPatient();
+		Assert.assertTrue(findPatientPage.isDisplayedSearchedPatient());
+		
+		Assert.assertEquals(findPatientPage.verifySearchedPatient(), expectedAssertProp.getProperty("searched.patient.name"));
 	}
 
 	@Test(priority = 2, description = "Verify the Search functionality by entering invalid patient name in the search box", enabled = true)
@@ -72,8 +78,16 @@ public class FindPatientTest extends BaseTest {
 		findPatientPage.enterValueInSearchBox(appData.getJSONObject("inValidPatient").getString("patientName"));
 		// Verify that the system correctly handles an invalid patient search
 		findPatientPage.verifyInvalidPatientSearch();
+		Assert.assertTrue(findPatientPage.verifyInvalidPatientSearch());
+		
+		Assert.assertEquals(findPatientPage.getInvalidPatientSearch(),
 
-	}
+				Arrays.asList(expectedAssertProp.getProperty("findpatient.nopatientfound.text"),
+						expectedAssertProp.getProperty("findpatient.noPatientFoundSubTitle.text"),
+						expectedAssertProp.getProperty("findpatient.addnewpatient.text")));
+		
+		
+}
 
 	@Test(priority = 3, description = " Verify the Search functionality by entering invalid patient id in the search box", enabled = true)
 	public void IDA4_2226_verifyInvalidPatientIdSearch() throws JSONException, InterruptedException {
@@ -82,6 +96,17 @@ public class FindPatientTest extends BaseTest {
 		findPatientPage.enterValueInSearchBox(appData.getJSONObject("invalidPatientID").getString("Id"));
 		// Verify that the system correctly handles an invalid patient search
 		findPatientPage.verifyInvalidPatientSearch();
+		// Enter invalid patient id and verify the search resultfindPatientPage.getInvalidPatientSearch
+		findPatientPage.enterValueInSearchBox(appData.getJSONObject("invalidPatientID").getString("Id"));
+		// Verify that the system correctly handles an invalid patient search
+		Assert.assertTrue(findPatientPage.verifyInvalidPatientSearch());
+		
+		Assert.assertEquals(findPatientPage.getInvalidPatientSearch(),
+
+				Arrays.asList(expectedAssertProp.getProperty("findpatient.nopatientfound.text"),
+						expectedAssertProp.getProperty("findpatient.noPatientFoundSubTitle.text"),
+						expectedAssertProp.getProperty("findpatient.addnewpatient.text")));
+
 	}
 	@AfterMethod
 	public void afterMethod() {
